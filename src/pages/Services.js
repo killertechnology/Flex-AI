@@ -3,7 +3,7 @@ import React from 'react';
 
 function Services() {
     return (
-        <div>
+        <div class='content1'>
             <h2>Our Services</h2>
             <ul>
                 <li>Machine learning and data trend prediction using customer data</li>
