@@ -1,0 +1,31 @@
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <nav className="navbar">
+            <h1>AI Services</h1>
+            <div className="hamburger" onClick={toggleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div className={`nav-links ${isOpen ? 'active' : ''}`}>
+                <Link to="/">Home</Link>
+                <Link to="/about">About Us</Link>
+                <Link to="/services">Services</Link>
+                <Link to="/careers">Careers</Link>
+                <Link to="/contact">Contact Us</Link>
+            </div>
+        </nav>
+    );
+}
+
+export default Navbar;
