@@ -20,7 +20,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b2d8d8; /* Pastel turquoise */
     padding: 1rem;
     border-bottom: 2px solid #87a7a7; /* Complementary pastel color */
 }

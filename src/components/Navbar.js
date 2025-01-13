@@ -11,9 +11,9 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <div >
-                <div><img src='nav-logo.png' width='20%' /></div> 
-                <div>Flex-AI</div>
+            <div>
+                <div className="flex-logo">Flex-AI</div> 
+                <div></div>
             </div>
             <div className="hamburger" onClick={toggleMenu}>
                 <div></div>
