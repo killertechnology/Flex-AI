@@ -8,47 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Services Company</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
     <link rel="stylesheet" href="buttonwillow.css">
-    <script src="buttonwillow.js"></script>
+    
 </head>
 <body>
     <div id="root" align="top"></div>
-     <script src="index.js"></script>
-    
-    <script>
-        console.log("loading...")
-        var Webflow = Webflow || [];
-        Webflow.push(function () {
-          // Function to get URL parameters
-          function getParam(name) {
-            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-              results = regex.exec(location.search);
-            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-          }
-        
-          // Activate primary tab
-          var primaryTabName = getParam('tab');
-          if (primaryTabName) {
-            $('.' + primaryTabName).triggerHandler('click');
-          }
-        
-          // Activate secondary tab
-          var secondaryTabName = getParam('subtab');
-          if (secondaryTabName) {
-            setTimeout(function() {
-              $('.' + secondaryTabName).triggerHandler('click');
-            }, 100); // Adjust delay as needed
-          }
-        
-          // Scroll to the specific section
-          setTimeout(function() {
-            $('html, body').animate({
-              scrollTop: $('#services-tab-section').offset().top
-            }, 1000); // Adjust scrolling speed as needed
-          }, 200); // Adjust delay to ensure tabs are activated before scrolling
-        });
-        </script>
-   
 </body>
 </html>

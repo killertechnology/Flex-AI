@@ -12,7 +12,7 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div>
-                <div className="flex-logo">Flex-AI</div> 
+                <div className="flex-logo"><Link to="/">Flex-AI</Link>  </div> 
                 <div></div>
             </div>
             <div className="hamburger" onClick={toggleMenu}>
@@ -23,7 +23,7 @@ function Navbar() {
             <div className={`nav-links ${isOpen ? 'active' : ''}`}>
                 <Link to="/">Home</Link>
                 <Link to="/about">About Us</Link>
-                <Link to="/services">Services</Link>
+                <Link to="/services2">Services</Link>
                 <Link to="/careers">Careers</Link>
                 <Link to="/contact">Contact Us</Link>
             </div>

@@ -1,60 +1,114 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Services() {
-    return (
-        <div class='flex-text'>
-            <p className="flex-logo">Our Services</p>
-            
-            <ul>
-                <li>Machine learning and data trend prediction using customer data</li>
-                <li>Lead generation and upselling automation</li>
-                <li>Call center/customer service automation customized for your business</li>
-                <li>Content creation and social network marketing automation</li>
-                <li>AI website chatbot trained to service your customers and generate leads</li>
-                <li>Responsible AI integrations for web/mobile apps and more</li>
-            </ul>      
 
-            <div class="w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0" role="tabpanel" style={{ opacity: 1, transition: 'all', opacity: '300ms' }}>
-            <div class="services-individual-box">
-                <div data-current="Tab 4" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs">
-                    <div class="services-page-tab-menu w-tab-menu" role="tablist">
-                    <a data-w-tab="Tab 1" id="workflowautomation" class="subtab workflowautomation w-inline-block w-tab-link" href="#workflow-automation" role="tab" aria-controls="workflow-automation" aria-selected="false" tabindex="-1">
-                        <div>Workflow Automation</div>
-                    </a>
-                    <a data-w-tab="Tab 2" id="naturallanguagesql" class="subtab naturallanguagesql w-inline-block w-tab-link w--current" href="#natural-language-to-sql" role="tab" aria-controls="natural-language-to-sql" aria-selected="true">
-                        <div>Natural language to SQL</div>
-                    </a>
-                    <a data-w-tab="Tab 3" id="complexdatapipelines" class="subtab complexdatapipelines w-inline-block w-tab-link" tabindex="-1" href="#complex-data-pipelines" role="tab" aria-controls="complex-data-pipelines" aria-selected="false">
-                        <div>Complex Data Pipelines</div>
-                    </a>
-                    <a id="selfadaptivesystems" data-w-tab="Tab 4" class="subtab selfadaptivesystems w-inline-block w-tab-link" href="#self-adaptive-decision-systems" role="tab" aria-controls="self-adaptive-decision-systems" aria-selected="false" tabindex="-1">
-                        <div>Self-Adaptive Decision Systems</div>
-                    </a>
+    useEffect(() => {
+        // Code to execute after render goes here
+
+        const buttons = document.querySelectorAll('.sub-navigation button');
+        const sections = document.querySelectorAll('.content-section');
+
+        buttons.forEach(button => {
+            console.log('adding button');
+            button.addEventListener('click', () => {
+                // Remove 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                button.className='active';
+                
+
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+                // Show the corresponding section
+                const target = button.getAttribute('data-section');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        console.log('Services has rendered!');
+      });
+
+    return (
+        
+        <div className='flex-text'>
+            <div className="flex-logo">Our Services</div><br/>
+            
+                 
+            <div className="container">
+                <div className="sub-navigation">
+                    <div className="flex-text">
+                        <a id="card1" data-w-tab="autonomous-agent-development" data-w-id="cac2a898-8bcc-bd89-1138-d25fe07862a5" class="tab card1 w-inline-block w-tab-link w--current" href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
+                            <div class="services-card-number-div">
+                                <div class="services-button-version-2">
+                                    <div>#1 </div>
+                                </div>
+                                <div class="services-indicator-outline">
+                                    <div class="div-block-2"></div>
+                                </div>
+                            </div>
+                            <h3 class="h3 green">AUTONOMOUS AGENT DEVELOPMENT</h3>
+                        </a>
                     </div>
-                    <div class="tabs-content w-tab-content">
-                        <div id="workflow-automation" data-w-tab="Tab 1" class="w-tab-pane" role="tabpanel" aria-labelledby="workflowautomation" >
-                            <h3>Workflow Automation</h3>
-                            <p class="paragraph">In today's digital era, efficiency is the backbone of any successful business. At Morningside AI, we harness the power of Autonomous Agents to revolutionize your workflow processes. Our Workflow Automation solution goes beyond traditional task automation; it incorporates intelligent agents that can make decisions, adapt to varying circumstances, and consistently optimize operations.<br /><br />Through our deep understanding of AI and its potential, we design agents that can predictively automate tasks, reducing manual intervention and the chances for human error. Whether you're looking to streamline administrative processes, enhance data operations, or elevate customer interactions, our bespoke autonomous agents are built to integrate seamlessly into your environment.</p>
-                        </div>
-                        <div id="natural-language-to-sql" data-w-tab="Tab 2" class="w-tab-pane w--tab-active" role="tabpanel" aria-labelledby="naturallanguagesql" style={{ transition: 'all', opacity: '300ms', opacity: 1 }}>
-                            <h3>Natural Language to SQL</h3>
-                            <p class="paragraph-2">In an age where data drives decisions, accessing and querying databases should be as intuitive as asking a question in plain English. At Morningside AI, we pride ourselves on pushing the boundaries of what's possible. In a recent collaboration with a leading Silicon Valley company, we innovated in the NL to SQL domain, achieving results that were over 40% better than current state-of-the-art methods. This accomplishment underscores our commitment to pioneering advancements in AI technology.<br /><br />Our solution transforms natural language queries into precise SQL statements, allowing users to retrieve, manipulate, and analyze data without the need to understand intricate SQL syntax. Empowering both non-tech professionals and experienced developers alike, we bridge the gap between human language and database queries, making data-driven decisions accessible to all.</p>
-                        </div>
-                    
-                        <div id="complex-data-pipelines" data-w-tab="Tab 3" class="w-tab-pane" role="tabpanel" aria-labelledby="complexdatapipelines">
-                            <h3>Complex Data Pipelines</h3>
-                            <p class="paragraph-3">Data is the lifeblood of modern businesses, but its sheer volume and complexity can make it challenging to harness effectively. At Morningside AI, we're pioneering the development of intricate data pipelines, transforming raw, disparate data into actionable insights. With our autonomous agent-driven solutions, we navigate the complexities of big data, ensuring fluidity and efficiency in data transition, processing, and analytics. <br /><br />Our expertise lies in designing and deploying data pipelines that handle large-scale, multi-dimensional data. Whether you're dealing with real-time data streams, batch processing, or a hybrid, our autonomous agents optimize processes, ensuring data integrity, and timely delivery for advanced analytics and machine learning applications.</p>
-                        </div>
-                        <div id="self-adaptive-decision-systems" data-w-tab="Tab 4" class="w-tab-pane" role="tabpanel" aria-labelledby="selfadaptivesystems">
-                            <h3>Self-Adaptive Decision Systems</h3>
-                            <p class="paragraph-4">In the ever-evolving landscape of business, static decision-making models no longer suffice. At Morningside AI, we're at the forefront of developing Self-Adaptive Decision Systems, a groundbreaking approach that empowers businesses to make intelligent decisions dynamically. These systems are not just reactive but proactively adjust to changing environments, learning from new data and evolving patterns.<br /><br />Our self-adaptive solutions harness the full potential of autonomous agents, enabling them to make decisions based on real-time data, past experiences, and predictive analytics. This continuous loop of learning and adapting ensures that your business stays ahead of the curve, optimizing operations and strategizing for future scenarios.</p>
-                        </div>
+                    <div className="flex-text">
+                        <a id="card1" data-w-tab="autonomous-agent-development" data-w-id="cac2a898-8bcc-bd89-1138-d25fe07862a5" class="tab card1 w-inline-block w-tab-link w--current" href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
+                            <div class="services-card-number-div">
+                                <div class="services-button-version-2">
+                                <div>#1 </div>
+                                </div>
+                                <div class="services-indicator-outline">
+                                <div class="div-block-2"></div>
+                                </div>
+                            </div>
+                            <h3 class="h3 green">AUTONOMOUS AGENT DEVELOPMENT</h3>
+                        </a>
                     </div>
+                    <div className="flex-text">
+                        <a id="card3" data-w-tab="chatbot-development" data-w-id="cac2a898-8bcc-bd89-1138-d25fe07862ab" class="tab card3 w-inline-block w-tab-link" href="#w-tabs-0-data-w-pane-2" role="tab" aria-controls="w-tabs-0-data-w-pane-2" aria-selected="false">
+                            <div class="services-card-number-div">
+                                <div class="services-button-version-2 white">
+                                <div>#3 </div>
+                                </div>
+                                <div class="services-indicator-outline white">
+                                <div class="div-block-2 _2"></div>
+                                </div>
+                            </div>
+                            <h3 class="h3 white">CHATBOT DEVELOPMENT</h3>
+                        </a>
+                    </div>
+                </div><br/>
+                <div className="sub-navigation">
+                    <button data-section="workflow-automation" className="active">Workflow Automation</button>
+                    <button data-section="natural-language-sql">Natural Language to SQL</button>
+                    <button data-section="complex-data-pipelines">Complex Data Pipelines</button>
+                    <button data-section="self-adaptive-decisions">Self-Adaptive Decision Systems</button>
+                </div>
+                <div id="workflow-automation" className="content-section active">
+                    <h2>Workflow Automation</h2>
+                    <p>Streamline your business processes with intelligent workflow automation designed to save time and increase efficiency.</p>
+                    <ul>
+                        <li>Machine learning and data trend prediction using customer data</li>
+                        <li>Lead generation and upselling automation</li>
+                        <li>Call center/customer service automation customized for your business</li>
+                        <li>Content creation and social network marketing automation</li>
+                        <li>AI website chatbot trained to service your customers and generate leads</li>
+                        <li>Responsible AI integrations for web/mobile apps and more</li>
+                    </ul>
+                </div>
+                <div id="natural-language-sql" className="content-section">
+                    <h2>Natural Language to SQL</h2>
+                    <p>Convert natural language queries into structured SQL commands, enabling seamless data analysis for non-technical users.</p>
+                </div>
+                <div id="complex-data-pipelines" className="content-section">
+                    <h2>Complex Data Pipelines</h2>
+                    <p>Manage and process complex data pipelines with ease using our advanced integration and orchestration tools.</p>
+                </div>
+                <div id="self-adaptive-decisions" className="content-section">
+                    <h2>Self-Adaptive Decision Systems</h2>
+                    <p>Implement self-adaptive decision-making systems that dynamically optimize operations and improve outcomes.</p>
                 </div>
             </div>
-        </div>      
         </div>
+
         
     );
 }
