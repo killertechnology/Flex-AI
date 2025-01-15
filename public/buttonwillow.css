@@ -3066,8 +3066,8 @@ body {
 .tab {
   border: 2px solid #0000;
   border-radius: 8px;
-  width: 90%;
-  height: 121px;
+  width: 28.6%;
+  height: 187px;
   margin-left: 8px;
   margin-right: 8px;
   padding: 20px;
@@ -3616,8 +3616,9 @@ body {
   }
 
   .tab {
-    height: 121px;
+    height: 187px;
     padding: 20px;
+    width: 29%;
   }
 
   .navbar-3 {
@@ -3910,7 +3911,7 @@ body {
   }
 
   .tab.card1.w--current {
-    width: 87%;
+    width: 28.5%;
   }
 
   .services-tabs {
@@ -4165,8 +4166,8 @@ body {
   }
 
   .tab {
-    width: 100%;
-    height: 120px;
+    width: 115%;
+    height: 100px;
     margin: 10px 0;
     padding: 10px 30px;
   }
@@ -4176,7 +4177,7 @@ body {
   }
 
   .tab.card1.w--current {
-    width: 100%;
+    width: 243%;
     transform: none;
   }
 
