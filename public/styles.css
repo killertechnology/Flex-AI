@@ -49,6 +49,7 @@ body {
 
 .nav-links {
     display: flex;
+    width:20%;
 }
 
 .nav-links a {
@@ -59,12 +60,14 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        width: 28%%;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        width: 28%%;
+        padding-top:99px;
     }
 
     .nav-links.active {

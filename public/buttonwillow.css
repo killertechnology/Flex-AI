@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0;
-  background-image: radial-gradient(circle, #023924f5 18%, #969595), url("expanded_design_no_text.png");
+  background-image: radial-gradient(circle, #fffffff5 18%, #e7f1ff), url("washed_out_image.png");
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
@@ -1963,6 +1963,7 @@ textarea.w-input, textarea.w-select {
 
 .w-tabs {
   position: relative;
+  align:center;
 }
 
 .w-tabs:before, .w-tabs:after {
@@ -2178,7 +2179,7 @@ body {
 }
 
 .flex-logo{
-  color: #fff;
+  color: #000000;
   font-weight: bolder;
   font-size: 24px;
   background-color: #fff0;
@@ -2193,7 +2194,7 @@ body {
 }
 
 .flex-text{
-  color: #fff;
+  color: #000000;
   font-weight: bolder;
   font-size: 12px;
   background-color: #fff0;
@@ -3121,6 +3122,7 @@ body {
 
 .services-individual-box {
   width: 100%;
+  align:center;
 }
 
 .services-tabs {
@@ -3140,7 +3142,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   display: flex;
-  width: 90%;
+  width: 100%;
   margin-left: 1px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
@@ -3148,13 +3150,14 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
+  padding:10px;
 }
 
 .subtab {
 
   margin-bottom: 2px;
   padding-left:15px;
-  background-color: black;
+  background-color: #e8e8e8;
   border: 1px solid #000;
   border-radius: 8px;
   justify-content: center;

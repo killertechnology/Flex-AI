@@ -161,7 +161,7 @@ function Services() {
                                 className="tab card1 w-inline-block w-tab-link w--current"  
                                 role="tab" aria-controls="sectionSet1">
                                 <div className="services-card-number-div">
-                                    <div className="services-button-version-2">
+                                    <div className="services-button-version-2 white">
                                         <div>#1 </div>
                                     </div>
                                     <div className="services-indicator-outline">
