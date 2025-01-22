@@ -16,18 +16,25 @@ body {
     
 }
 
+.logo {
+    background-color: #000;
+    border-style: none;
+    width: 100%;
+    margin-right: 0;
+   font-size: 30px;
+    
+  }
+
 .navbar {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
     border-bottom: 2px solid #87a7a7; /* Complementary pastel color */
 }
 
 .navbar a {
     color: #ffffff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    
 }
 
 .navbar a:hover {

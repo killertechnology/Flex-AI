@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="logo">
-          MySite
+          <img src='images/gis.webp' width="90px" />
         </Link>
         <button
           className={`hamburger ${menuOpen ? "active" : ""}`}
@@ -38,7 +38,7 @@ const Navbar = () => {
         >
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
-          <Link to="/services2" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
           <Link to="/careers" onClick={() => setMenuOpen(false)}>Careers</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link>
         </div>

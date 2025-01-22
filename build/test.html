@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-navigation {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .sub-navigation button {
+            padding: 10px 20px;
+            background-color: #b2d8d8;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .sub-navigation button:hover {
+            background-color: #87a7a7;
+        }
+
+        .sub-navigation button.active {
+            background-color: #4b9ea1;
+        }
+
+        .content-section {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="sub-navigation">
+            <button data-section="workflow-automation" class="active">Workflow Automation</button>
+            <button data-section="natural-language-sql">Natural Language to SQL</button>
+            <button data-section="complex-data-pipelines">Complex Data Pipelines</button>
+            <button data-section="self-adaptive-decisions">Self-Adaptive Decision Systems</button>
+        </div>
+        <div id="workflow-automation" class="content-section active">
+            <h2>Workflow Automation</h2>
+            <p>Streamline your business processes with intelligent workflow automation designed to save time and increase efficiency.</p>
+        </div>
+        <div id="natural-language-sql" class="content-section">
+            <h2>Natural Language to SQL</h2>
+            <p>Convert natural language queries into structured SQL commands, enabling seamless data analysis for non-technical users.</p>
+        </div>
+        <div id="complex-data-pipelines" class="content-section">
+            <h2>Complex Data Pipelines</h2>
+            <p>Manage and process complex data pipelines with ease using our advanced integration and orchestration tools.</p>
+        </div>
+        <div id="self-adaptive-decisions" class="content-section">
+            <h2>Self-Adaptive Decision Systems</h2>
+            <p>Implement self-adaptive decision-making systems that dynamically optimize operations and improve outcomes.</p>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.sub-navigation button');
+        const sections = document.querySelectorAll('.content-section');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                button.classList.add('active');
+
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+                // Show the corresponding section
+                const target = button.getAttribute('data-section');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
