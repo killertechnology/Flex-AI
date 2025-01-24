@@ -1,13 +1,52 @@
 
 body {
+        box-sizing: border-box;
+        line-height: 1.6;
+    display: block;
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+      background-color: #fff;
+    min-height: 100%;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+    font-family: Montserrat, sans-serif;
+
+/*background-image: radial-gradient(circle, #fffffff5 18%, #e7f1ff), url("washed_out_image.png");*/
+  height: 100%;
+  overflow-y: auto; 
+
 }
+
+/* Container for the video background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Place the video behind other content */
+  }
+  
+  /* Make the video cover the entire background */
+  .video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    opacity: 0.2; /* Set video transparency to 60% */
+  }
+  
 
 .content1 {
 
@@ -16,16 +55,100 @@ body {
     
 }
 
-.logo {
-    background-color: #000;
-    border-style: none;
-    width: 100%;
-    margin-right: 0;
-   font-size: 30px;
-    
+.logo{
+    color: #000000;
+    justify-content: left;
+    align: left;
+    margin: 0 0px;
+    padding: 0px;
+    text-decoration: none;
+    transition: background-color .2s;
+    z-index: 1000;
   }
 
-.navbar {
+  .flex-logo{
+    color: #000000;
+    font-weight: bolder;
+    font-size: 24px;
+    background-color: #fff0;
+    border-radius: 3px;
+    justify-content: left;
+    align: left;
+    margin: 0 1px;
+    padding: 0px;
+    text-decoration: none;
+    transition: background-color .2s;
+    z-index: 1000;
+  }
+  
+  .flex-text{
+    color: #8f8f8f;
+    font-weight: bolder;
+    font-size: 12px;
+    background-color: #fff0;
+    border-radius: 3px;
+    justify-content: left;
+    align: left;
+    margin: 0 1px;
+    padding: 5px;
+    text-decoration: none;
+    transition: background-color .2s;
+    z-index: 1000;
+  }
+
+  .navbar-container{
+
+    background-position: 0 0, 0 0;
+    background-size: auto, auto;
+    max-width: 100%;
+    height: 60vh;
+    max-height: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 1001;
+  }
+
+  
+  .nav-menu-mobile {
+    border: 1px solid #fff;
+    border-radius: 8px;
+    margin-right: 30px;
+    padding: 1px;
+    display: flex;
+  }
+  
+  .nav-link {
+    color: #f0f0f0; 
+    background-color: #fff0;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: left;
+    margin: 0 1px;
+    padding: 14px 30px;
+    text-decoration: none;
+    transition: background-color .2s;
+    width:200px;
+  }
+  
+  .nav-link:hover {
+    color: #000;
+    background-color: #a5a5a5;
+  }
+  
+  .nav-link.w--current, .nav-link.w--current:focus, .nav-link.w--current:visited {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .navbar {
+
+    background-position: 0 0, 0 0;
+    background-color: rgb(67, 67, 67);
+    background-size: auto, auto;
+    max-width: 100%;
+    height: 60vh;
+    max-height: 100px;
+    position: static;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #87a7a7; /* Complementary pastel color */
@@ -41,44 +164,78 @@ body {
     background-color: #87a7a7;
 }
 
+.nav-left {
+ position: fixed;
+ z-index: 1004;
+ background-color: #000000;
+ width: 100%;
+}
+
+.nav-middle{
+
+}
+
+.nav-right {
+    position: fixed;
+    z-index: 1010;
+    text-align: right;
+    width: 100%;
+}
 .navburger {
     
     align-items: center;
     background-color: rgb(205, 205, 205);
     padding-top: 99px;
   }
+
+  .menu {
+    gap: 10px; /* Adjust the spacing as needed */
+    white-space: nowrap; /* Prevent text wrapping */
+    display: flex;
+    justify-content: flex-end;
+    padding:15px;
+  }
+  
+  .menu div {
+    display: inline-block;
+  }
+
   
   .hamburger {
-    display: flex;
+    display:none;
     flex-direction: column;
     justify-content: space-between;
     height: 20px;
     cursor: pointer;
     margin-right: 20px; /* Space between hamburger and nav links */
+    background-color: rgb(224, 79, 79);
+    text-align: right;
+    width: 100%;
+    z-index: 1009;
+    
   }
   
   .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: #000; /* Adjust color as needed */
+    background-color: #ffffff; /* Adjust color as needed */
   }
   
   .nav-links {
-    position: fixed; /* Fixes the navbar to the top */
+    /* position: fixed; Fixes the navbar to the top */
   top: 0; /* Ensures it's at the very top of the page */
   left: 0;
   width: 100%; /* Ensures it spans the full width */
   z-index: 1000; /* Keeps it above other elements */
-  background-color: #333; /* Keeps it visible with a background color */
   color: white;
   padding: 10px 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-  display:flex;
+  
   }
   
   .nav-links a {
     text-decoration: none;
-    color: #000000; /* Adjust color as needed */
+    color: #f0f0f0; 
     font-size: 19px; /* Adjust font size */
     font-weight: bolder;
 
@@ -87,18 +244,58 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
-        width: 28%;
+        height: 29px;
+        width: 67px;
+       vertical-align: top;
+       padding:5px;
+        
     }
+
+    .menu {
+       
+        /*gap: 10px;  Adjust the spacing as needed */
+        white-space:wrap; /* Prevent text wrapping */
+        
+        white-space: normal; /* Prevent text wrapping */
+        display:inline;
+      }
+
 
     .nav-links {
         display: none;
         flex-direction: column;
-        width: 28%%;
+        width: 180px;
+        text-wrap:normal;
+        
         
     }
 
     .nav-links.active {
         display: flex;
+        background-color: #000;
+    }
+    .nav-middle{
+        display: flex;
+        justify-content: flex-end; /* Aligns child elements to the right */
+        width: 106%;
+        padding:25px;
+    }
+
+    .nav-right {
+        width: 100%;
+        z-index: 1009;
+
+        display: flex; /* Use Flexbox for alignment */
+        justify-content: flex-end; /* Aligns child elements to the right */
+        align-items: center;
+
+    }
+
+    .greenLine {
+        background-color: #87a7a7;
+        height:5px;
+        width:100%;
+
     }
 }
 
@@ -125,3 +322,120 @@ a:focus, button:focus {
     outline: 2px dashed #4b9ea1; /* High visibility focus for accessibility */
     outline-offset: 2px;
 }
+
+
+
+.subtab {
+
+    margin-bottom: 2px;
+    padding-left:15px;
+    background-color: #e8e8e8;
+    border: 1px solid #000;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 35px;
+    font-size: 12px;
+    line-height: 18px;
+    transition: transform .1s;
+    display: flex;
+  }
+  
+  .subtab:hover {
+    transform: translate(0, -2px);
+  }
+  
+  .subtab.w--current {
+    color: black;
+    background-color: #fff;
+    border-style: solid;
+  }
+  
+  .tabs-content {
+    width: 100%;
+  }
+
+
+.w-tabs {
+    position: relative;
+  }
+  
+  .w-tabs:before, .w-tabs:after {
+    content: " ";
+    grid-area: 1 / 1 / 2 / 2;
+    display: table;
+  }
+  
+
+.services-page-tab-menu {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin-left: 1px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+    padding:10px;
+  }
+
+  .w-tabs:after {
+    clear: both;
+  }
+
+  .services-individual-box {
+    width: 89%;
+    align:center;
+  }
+
+  
+  .services-tabs {
+    width: 90%;
+    margin-top: -44px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .services-tab-content-1 {
+    margin-top: 30px;
+  }
+  
+
+.container {
+    
+        padding: 50px 20px;
+    width: 100%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 20px;
+    
+    max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      /*background-color: #ffffff;*/
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+.w-layout-blockcontainer {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+
+.w-container {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .div-block-2._2 {
+    background-color: #77fa9c;
+  }

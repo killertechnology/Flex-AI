@@ -1,20 +1,5 @@
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            /*background-color: #ffffff;*/
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+       
 
         .sub-navigation {
             display: flex;
@@ -56,9 +41,7 @@
             font-family: sans-serif;
           }
           
-          body {
-            margin: 0;
-          }
+         
           
           article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
             display: block;
@@ -271,15 +254,6 @@
             height: 100%;
           }
           
-          body {
-            color: #333;
-            background-color: #fff;
-            min-height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            line-height: 20px;
-          }
           
           img {
             vertical-align: middle;
@@ -738,11 +712,6 @@
             height: 20px;
           }
           
-          .w-container {
-            max-width: 940px;
-            margin-left: auto;
-            margin-right: auto;
-          }
           
           .w-container:before, .w-container:after {
             content: " ";
@@ -2012,9 +1981,7 @@
             }
           }
           
-          .w-tabs {
-            position: relative;
-          }
+      
           
           .w-tabs:before, .w-tabs:after {
             content: " ";
@@ -2112,7 +2079,7 @@
           }
           
           .w-layout-blockcontainer {
-            max-width: 940px;
+            max-width: 90%;
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -2149,13 +2116,7 @@
             }
           }
           
-          body {
-            color: #000;
-            font-family: Montserrat, sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
-          }
+          
           
           .page-wrapper {
             display: block;
@@ -2168,14 +2129,6 @@
             height: 80px;
             margin-left: 0;
             display: flex;
-          }
-          
-          .container {
-            width: 100%;
-            max-width: 1800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 50px 20px;
           }
           
           .container.hero {
@@ -2513,7 +2466,7 @@
           }
           
           .services-bottom-box {
-            display: flex;
+            display: flex;fw-tab-
           }
           
           .services-bottom-grid {
@@ -2542,12 +2495,7 @@
             line-height: 30px;
           }
           
-          .h3.green {
-            color: #189d6d;
-            font-size: 22px;
-            font-weight: 600;
-          }
-          
+       
           .small-button {
             color: #000;
             text-align: center;
@@ -2723,9 +2671,7 @@
             display: flex;
           }
           
-          .div-block-2._2 {
-            background-color: #fff;
-          }
+          
           
           .blog-preview-div {
             flex-direction: row;
@@ -3138,9 +3084,7 @@
             margin-right: 30px;
           }
           
-          .services-individual-box {
-            width: 80%;
-          }
+       
           
           .services-tabs {
             width: 90%;
@@ -3154,9 +3098,7 @@
           }
          
           
-          .tabs-content {
-            width: 80%;
-          }
+         
           
           .careers-apply-form {
             width: 70%;
@@ -3275,9 +3217,7 @@
             margin-right: 200px;
           }
           
-          .body, .section-2 {
-            display: block;
-          }
+          
           
           .job-post-div {
             width: 70%;

@@ -210,10 +210,10 @@ function Services() {
                                             <div>Workflow Automation</div>
                                             </a>
                                             <a id="btn_natural-language-to-sql" aria-controls="buttonSet1" className="subtab"  role="tab">
-                                            <div>Natural language to SQL</div>
+                                            <div>Natural language Analysis</div>
                                             </a>
                                             <a id="btn_complex-data-pipelines" aria-controls="buttonSet1" className="subtab" role="tab">
-                                            <div>Complex Data Pipelines</div>
+                                            <div>Conversational Pathways</div>
                                             </a>
                                             <a id="btn_self-adaptive-decision-systems" aria-controls="buttonSet1" className="subtab " role="tab">
                                             <div>Self-Adaptive Decision Systems</div>
@@ -222,26 +222,34 @@ function Services() {
                                         <div className="tabs-content w-tab-content" id="Card1Content">
                                             <div id="workflow-automation" className="w-tab-pane w--tab-active section" role="tabpanel">
                                                 <h3>Workflow Automation</h3>
-                                                <p className="paragraph">In today's digital era, efficiency is the backbone of any successful business. At Morningside AI, we harness the power of Autonomous Agents to revolutionize your workflow processes. Our Workflow Automation solution goes beyond traditional task automation; it incorporates intelligent agents that can make decisions, adapt to varying circumstances, and consistently optimize operations. <br />
-                                                    <br />Through our deep understanding of AI and its potential, we design agents that can predictively automate tasks, reducing manual intervention and the chances for human error. Whether you're looking to streamline administrative processes, enhance data operations, or elevate customer interactions, our bespoke autonomous agents are built to integrate seamlessly into your environment.
+                                                <p className="paragraph">
+                                                    <p>Our autonomous agents streamline workflows by automating repetitive tasks and enhancing efficiency. We design systems that integrate seamlessly into your processes, reducing manual effort and boosting productivity.</p>
+                                                    <p>Using advanced algorithms, our agents optimize operations, ensuring smooth task execution and resource allocation. We tailor solutions to fit your unique business needs.</p>
+                                                    <p>With automated workflows, you save time and resources, enabling your team to focus on strategic priorities and drive innovation.</p>
                                                 </p>
                                             </div>
                                             <div id="natural-language-to-sql" className="w-tab-pane w--tab-active section" role="tabpanel" >
-                                                <h3>Natural Language to SQL</h3>
-                                                <p className="paragraph-2">In an age where data drives decisions, accessing and querying databases should be as intuitive as asking a question in plain English. At Morningside AI, we pride ourselves on pushing the boundaries of what's possible. In a recent collaboration with a leading Silicon Valley company, we innovated in the NL to SQL domain, achieving results that were over 40% better than current state-of-the-art methods. This accomplishment underscores our commitment to pioneering advancements in AI technology. <br />
-                                                    <br />Our solution transforms natural language queries into precise SQL statements, allowing users to retrieve, manipulate, and analyze data without the need to understand intricate SQL syntax. Empowering both non-tech professionals and experienced developers alike, we bridge the gap between human language and database queries, making data-driven decisions accessible to all.
+                                                <h3>Natural Language Analysis</h3>
+                                                <p className="paragraph-2">
+                                                    <p>We build autonomous agents capable of analyzing natural language to extract insights and understand user intent. These systems process text and speech with precision, delivering actionable information.</p>
+                                                    <p>Our solutions enhance communication, enabling better customer support, sentiment analysis, and data-driven decision-making. They are designed to evolve with your language processing needs.</p>
+                                                    <p>By leveraging natural language analysis, you unlock deeper insights and improve user experiences across applications.</p>
                                                 </p>
                                             </div>
                                             <div id="complex-data-pipelines" className="w-tab-pane w--tab-active section" role="tabpanel" >
-                                                <h3>Complex Data Pipelines</h3>
-                                                <p className="paragraph-3">Data is the lifeblood of modern businesses, but its sheer volume and complexity can make it challenging to harness effectively. At Morningside AI, we're pioneering the development of intricate data pipelines, transforming raw, disparate data into actionable insights. With our autonomous agent-driven solutions, we navigate the complexities of big data, ensuring fluidity and efficiency in data transition, processing, and analytics. <br />
-                                                    <br />Our expertise lies in designing and deploying data pipelines that handle large-scale, multi-dimensional data. Whether you're dealing with real-time data streams, batch processing, or a hybrid, our autonomous agents optimize processes, ensuring data integrity, and timely delivery for advanced analytics and machine learning applications.
+                                                <h3>Conversational Pathways</h3>
+                                                <p className="paragraph-3">
+                                                    <p>Our autonomous agents create dynamic conversational pathways, enabling seamless user interactions. They adapt in real time, delivering personalized and context-aware responses.</p>
+                                                    <p>We design these systems to enhance customer engagement, improve support experiences, and drive satisfaction. Each pathway aligns with your business objectives and audience needs.</p>
+                                                    <p>With conversational pathways, you offer intuitive, impactful interactions that strengthen relationships and achieve results.</p>
                                                 </p>
                                             </div>
                                             <div id="self-adaptive-decision-systems" className="w-tab-pane w--tab-active section" role="tabpanel" >
                                                 <h3>Self-Adaptive Decision Systems</h3>
-                                                <p className="paragraph-4">In the ever-evolving landscape of business, static decision-making models no longer suffice. At Morningside AI, we're at the forefront of developing Self-Adaptive Decision Systems, a groundbreaking approach that empowers businesses to make intelligent decisions dynamically. These systems are not just reactive but proactively adjust to changing environments, learning from new data and evolving patterns. <br />
-                                                    <br />Our self-adaptive solutions harness the full potential of autonomous agents, enabling them to make decisions based on real-time data, past experiences, and predictive analytics. This continuous loop of learning and adapting ensures that your business stays ahead of the curve, optimizing operations and strategizing for future scenarios.
+                                                <p className="paragraph-4">
+                                                    <p>We develop self-adaptive decision systems that enable autonomous agents to learn and evolve. These systems adjust to new data and conditions, ensuring optimal decision-making.</p>
+                                                    <p>Our solutions empower agents to operate independently, solving complex problems and improving outcomes over time. They are designed to be robust and scalable.</p>
+                                                    <p>With self-adaptive systems, your business gains agility and responsiveness, staying competitive in dynamic environments.</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -269,26 +277,34 @@ function Services() {
                                         <div className="tabs-content w-tab-content" id="Card2Content">
                                             <div id="strategy-development" className="w-tab-pane w--tab-active section" role="tabpanel">
                                             <h3>Strategy Development</h3>
-                                            <p className="paragraph-5">At Morningside AI, we leverage deep industry knowledge and cutting-edge insights to architect a coherent, actionable AI strategy tailored for your business. We understand that every enterprise has unique goals, challenges, and landscapes; our strategy development is designed to reflect that individuality. <br />
-                                                <br />We don't just skim the surface; our consultants dive deep into your organization's DNA, understanding its intricacies to pinpoint where AI can be a game-changer. From ideation to blueprinting, our strategy development process is a meticulous blend of your vision and our expertise.
+                                            <p className="paragraph-5">
+                                            <p>Our AI business develops tailored strategies that align technology with your goals. We analyze your vision, challenges, and market landscape to create actionable roadmaps that optimize operations and drive growth.</p>
+                                            <p>Our process identifies core challenges, analyzes trends, and designs AI strategies to enhance efficiency and innovation. We prioritize measurable outcomes and long-term success for your organization.</p>
+                                            <p>From ideation to implementation, we ensure strategies remain adaptive and future-proof, delivering lasting value as your business evolves.</p>
+
                                             </p>
                                             </div>
                                             <div id="performance-evaluation" className="w-tab-pane w--tab-active section" role="tabpanel">
-                                            <h3>Performance Evaluation</h3>
-                                            <p className="paragraph-6">In the realm of AI-driven enterprises, the maxim "what gets measured gets managed" has never been more pertinent. Morningside AI's Performance Evaluation service offers a comprehensive assessment of your AI initiatives, ensuring they deliver tangible results and are in alignment with set benchmarks. <br />
-                                                <br />Understanding the impact of AI solutions isn't just about number-crunching; it's about discerning the nuances that drive those numbers.With our seasoned consultants, we delve into both qualitative and quantitative metrics, providing a holistic view of your AI implementations. Whether it's the efficiency of an algorithm, the accuracy of predictions, or the tangible business outcomes achieved, we meticulously evaluate every facet.
-                                            </p>
+                                                <h3>Performance Evaluation</h3>
+                                                <p className="paragraph-6"><p>We provide comprehensive performance evaluations to ensure your AI models deliver accurate and reliable results. Using advanced metrics, we assess alignment with your goals and optimize for scalability.</p>
+                                                    <p>Our evaluations identify improvements, reduce bias, and enhance reliability. Whether for predictive analytics or automation, we maximize the value of your AI investment.</p>
+                                                    <p>We also guide upgrades or retraining, ensuring your models stay relevant and effective as requirements evolve.</p>
+                                                </p>
                                             </div>
                                             <div id="use-case-identification" className="w-tab-pane w--tab-active section" role="tabpanel">
                                             <h3>Use Case Identification</h3>
-                                            <p className="paragraph-7">Morningside AI’s Use Case Identification service is a specialized approach to uncover the most potent AI applications tailored for your enterprise. We believe in harnessing AI where it matters most, transforming potential into palpable impact. <br />
-                                                <br />Our &nbsp;consultants engage in a deep-dive analysis of your organization's operations, culture, and aspirations. By weaving together this understanding with our vast knowledge of AI advancements, we illuminate AI opportunities that resonate with your business objectives and industry dynamics.
+                                            <p className="paragraph-7">
+                                                <p>We identify high-impact AI use cases that solve key challenges. Through consultations, we uncover opportunities to address bottlenecks, market gaps, and customer needs.</p>
+                                                <p>Each use case aligns with clear objectives, detailing ROI and operational benefits. We prioritize and implement cases that deliver quick wins and long-term value.</p>
+                                                <p>Our expertise ensures your use cases align with strategic goals, enabling scalable growth and innovation.</p>
                                             </p>
                                             </div>
                                             <div id="feasibility-assessments" className="w-tab-pane w--tab-active section" role="tabpanel">
                                             <h3>Feasibility Assessments</h3>
-                                            <p className="paragraph-8">Venturing into AI initiatives without gauging their feasibility can lead to expended resources with little to show for it. Morningside AI’s Feasibility Assessments provide a rigorous examination of proposed AI projects, ensuring they stand on a foundation of practicality, viability, and potential return on investment. <br />
-                                                <br />With a meticulous approach, our consultants evaluate the technical, operational, and financial aspects of your AI aspirations. This comprehensive assessment ensures that every AI project you undertake is actionable and aligns with your business's infrastructure, goals, and resources.
+                                            <p className="paragraph-8">
+                                                <p>We conduct detailed feasibility assessments to evaluate AI project viability. By analyzing impact, resources, and risks, we ensure initiatives are aligned with your capabilities.</p>
+                                                <p>We assess data infrastructure, technical constraints, and stakeholder readiness, identifying challenges and mitigation strategies.</p>
+                                                <p>Our assessments provide realistic timelines, costs, and insights, helping you pursue AI projects with confidence and measurable results.</p>
                                             </p>
                                             </div>
                                         </div>
@@ -316,27 +332,34 @@ function Services() {
                                         <div className="tabs-content w-tab-content" id="Card3Content">
                                             <div id="gpt4-development" className="w-tab-pane w--tab-active section" role="tabpanel" aria-labelledby="gpt4development">
                                                 <h3>GPT Development</h3>
-                                                <p className="paragraph-9">The conversational AI landscape has been revolutionized with the advent of models like GPT-3 and GPT-4. At Morningside AI, we harness the unmatched capabilities of these groundbreaking models to create state-of-the-art chatbots that deliver human-like interactions, rich contextual understanding, and seamless user experiences. <br />
-                                                    <br />Our expertise in GPT-3 and GPT-4 development places us at the forefront of chatbot innovation. By tapping into these models, we craft chatbots that are not just reactive but can also anticipate user needs, understand nuances, and offer solutions that feel genuinely intuitive. <br />
-                                                    <br />We are also pleased to announce the introduction of our OpenAI&nbsp;GPT&nbsp;development services. On the back of OpenAI's introduction of GPTs, Morningside AI is now developing GPTs for businesses around the globe.
+                                                <p className="paragraph-9">
+                                                    <p>We specialize in developing GPT-based chatbots tailored to your business needs. These advanced models deliver natural, engaging, and intelligent conversations with users.</p>
+                                                    <p>Our GPT chatbots integrate seamlessly into your platforms, enhancing customer experiences and automating communication. They are designed to understand context and provide accurate responses.</p>
+                                                    <p>With GPT development, you gain a powerful tool for scalable, efficient, and user-friendly interactions.</p>
                                                 </p>
                                             </div>
                                             <div id="secure-solutions" className="w-tab-pane w--tab-active section" role="tabpanel" aria-labelledby="securesolutions">
-                                                <h3>Secure Solutions</h3>
-                                                <p className="paragraph-10">We understand that security is not just an afterthought—it's a foundational requirement. At Morningside AI, we prioritize the protection of your data and your users' interactions, ensuring we are inline with your security and compliance requirements. We craft chatbots that are robust against vulnerabilities and threats, without compromising on functionality or user experience. <br />
-                                                    <br />With cyber risks ever-looming, our approach to chatbot development is underpinned by rigorous security protocols. From data encryption to intrusion detection, we incorporate cutting-edge security measures that safeguard both the chatbot and its users.
+                                                <h3> Secure Solutions & Responsibility</h3>
+                                                <p className="paragraph-10">
+                                                    <p>We prioritize security and ethical responsibility in chatbot development, ensuring data protection and compliance with privacy standards. Our systems are built with robust safeguards to prevent misuse.</p>
+                                                    <p>Our team incorporates ethical AI principles, ensuring transparency, fairness, and accountability in chatbot interactions.</p>
+                                                    <p>With secure and responsible solutions, you can deploy chatbots with confidence, fostering trust with your users.</p>
                                                 </p>
                                             </div>
                                             <div id="knowledge-response" className="w-tab-pane w--tab-active section" role="tabpanel" aria-labelledby="knowledgeresponse">
                                                 <h3>Knowledge Response</h3>
-                                                <p className="paragraph-11">We all know that our data is vast and ever-evolving. Morningside AI can help you tap into your expansive information reservoir, allowing chatbots to provide accurate, up-to-date, and contextually relevant answers. We transcend traditional chatbot capabilities, moving beyond preset responses to offer insights drawn from a rich tapestry of data sources. <br />
-                                                    <br />Our chatbots, equipped with Knowledge Response, become dynamic information hubs. They sift through volumes of data, discerning context, intent, and nuance to deliver not just any answer, but the right answer.
+                                                <p className="paragraph-11">
+                                                    <p>Our chatbots excel in delivering accurate, context-aware responses using vast knowledge bases. They provide users with precise information tailored to their queries.</p>
+                                                    <p>We ensure the systems are designed to learn and update as knowledge evolves, maintaining relevance and accuracy over time.</p>
+                                                    <p>With knowledge response capabilities, your chatbots enhance user trust and satisfaction by delivering the right answers, every time.</p>
                                                 </p>
                                             </div>
                                             <div id="model-tuning" className="w-tab-pane w--tab-active section" role="tabpanel" aria-labelledby="modeltuning">
                                                 <h3>Model Tuning</h3>
-                                                <p className="paragraph-12">A chatbot is only as effective as the underlying model that powers it. We recognize the value of precision, responsiveness, and accuracy. Our Model Tuning service dives deep into the intricacies of your chatbot's machine learning model, optimizing its parameters for peak performance and ensuring it aligns seamlessly with your specific use-case demands. <br />
-                                                    <br />Model tuning is both an art and a science. By employing advanced algorithms and a meticulous iterative process, we refine the model, pushing its capabilities to the edge of perfection. The outcome? A chatbot that understands better, responds smarter, and engages more effectively.
+                                                <p className="paragraph-12">
+                                                    <p>We provide expert model tuning to customize chatbot behavior and improve performance. This ensures your chatbot aligns with your specific use cases and brand personality.</p>
+                                                    <p>Our team fine-tunes models for accuracy, efficiency, and responsiveness, addressing domain-specific needs and user preferences.</p>
+                                                    <p>With optimized model tuning, your chatbot delivers superior interactions and adapts seamlessly to your goals.</p>
                                                 </p>
                                             </div>
                                         </div>
