@@ -1,0 +1,105 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    // Load the Gantt package
+    google.charts.load('current', {packages:['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('string', 'Resource');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      // Helper function for creating new Date(y, m, d)
+      // Remember that months are 0-based in JS (2 = March)
+      function dateYMD(y, m, d) {
+        return new Date(y, m, d);
+      }
+
+      // We push tasks in the order assigned, using single-day intervals.
+      // If a task doesn't fit the leftover hours for that day, it moves to the next weekday.
+      // We'll skip tasks with '?' or '--' hours.
+      // Start date range: March 6, 2025 (Thursday) - end by April 1, 2025.
+
+      // Below is the final scheduling approach:
+      // Each row: [ 'TaskID', 'Task Name', 'Resource', StartDate, EndDate, null, 0, null ]
+
+      data.addRows([
+        // Thu 3/6:
+        ['T1', 'Global Navigation (logo with override capability)', 'Shared / Global Modules', dateYMD(2025,2,6), dateYMD(2025,2,6), null, 0, null],
+        ['T2', 'Global Navigation modal popup', 'Shared / Global Modules', dateYMD(2025,2,6), dateYMD(2025,2,6), null, 0, null],
+        // Fri 3/7:
+        ['T3', 'Global Carousel Animation 2 Component (who we are carousel)', 'Shared / Global Modules', dateYMD(2025,2,7), dateYMD(2025,2,7), null, 0, null],
+        ['T4', 'Global Footer Animation (start a conversation)', 'Shared / Global Modules', dateYMD(2025,2,7), dateYMD(2025,2,7), null, 0, null],
+        // Mon 3/10:
+        ['T5', 'Global Footer Formatting', 'Shared / Global Modules', dateYMD(2025,2,10), dateYMD(2025,2,10), null, 0, null],
+        // Tue 3/11:
+        ['T6', 'Shared Carousel Animation Component (featured case study)', 'Shared / Global Modules', dateYMD(2025,2,11), dateYMD(2025,2,11), null, 0, null],
+        // Wed 3/12:
+        ['T7', 'Shared Ticker Tape Overlay Component', 'Shared / Global Modules', dateYMD(2025,2,12), dateYMD(2025,2,12), null, 0, null],
+        ['T8', 'Global Nav Override', 'Homepage Template', dateYMD(2025,2,12), dateYMD(2025,2,12), null, 0, null],
+        // Thu 3/13:
+        ['T9', 'Homepage Text Animation 1 (impossible things)', 'Homepage Template', dateYMD(2025,2,13), dateYMD(2025,2,13), null, 0, null],
+        ['T10', 'Shared Carousel Integration (featured case study) [Homepage]', 'Homepage Template', dateYMD(2025,2,13), dateYMD(2025,2,13), null, 0, null],
+        // Fri 3/14:
+        ['T11', 'Homepage Text Animation WP component', 'Homepage Template', dateYMD(2025,2,14), dateYMD(2025,2,14), null, 0, null],
+        // Mon 3/17:
+        ['T12', 'Scrolling Text Animation 3 (our mission)', 'Homepage Template', dateYMD(2025,2,17), dateYMD(2025,2,17), null, 0, null],
+        // Tue 3/18:
+        ['T13', 'Homepage Accordion (Selected - Projects) UI', 'Homepage Template', dateYMD(2025,2,18), dateYMD(2025,2,18), null, 0, null],
+        // Wed 3/19:
+        ['T14', 'Homepage Accordion (Selected - Projects) Filter function', 'Homepage Template', dateYMD(2025,2,19), dateYMD(2025,2,19), null, 0, null],
+        ['T15', 'Homepage Accordion WP component', 'Homepage Template', dateYMD(2025,2,19), dateYMD(2025,2,19), null, 0, null],
+        // Thu 3/20:
+        ['T16', 'Global Carousel Animation 2 Integration (who we are carousel) [Homepage]', 'Homepage Template', dateYMD(2025,2,20), dateYMD(2025,2,20), null, 0, null],
+        ['T17', 'Shared Carousel Integration (featured case study) [Case Studies Landing]', 'Case Studies Landing', dateYMD(2025,2,20), dateYMD(2025,2,20), null, 0, null],
+        ['T18', 'Ticker Tape Component Integration [Case Studies Landing]', 'Case Studies Landing', dateYMD(2025,2,20), dateYMD(2025,2,20), null, 0, null],
+        ['T19', 'Card Animation (Case Study Items List)', 'Case Studies Landing', dateYMD(2025,2,20), dateYMD(2025,2,20), null, 0, null],
+        ['T20', 'Card Animation WP component', 'Case Studies Landing', dateYMD(2025,2,20), dateYMD(2025,2,20), null, 0, null],
+        ['T21', 'Global Carousel Animation 2 Integration (who we are carousel) [Case Studies Landing]', 'Case Studies Landing', dateYMD(2025,2,20), dateYMD(2025,2,20), null, 0, null],
+        // Fri 3/21:
+        ['T22', 'CS Brand & Title Overlay (re-used from homepage)', 'Case Studies Detail Page', dateYMD(2025,2,21), dateYMD(2025,2,21), null, 0, null],
+        ['T23', 'Ticker Tape Component Integration [Case Studies Detail Page]', 'Case Studies Detail Page', dateYMD(2025,2,21), dateYMD(2025,2,21), null, 0, null],
+        ['T24', 'Text Animation 2  [Case Studies Detail Page]', 'Case Studies Detail Page', dateYMD(2025,2,21), dateYMD(2025,2,21), null, 0, null],
+        ['T25', 'Text Animation 4  [Case Studies Detail Page]', 'Case Studies Detail Page', dateYMD(2025,2,21), dateYMD(2025,2,21), null, 0, null],
+        ['T26', 'Text Animation 4 WP component updates', 'Case Studies Detail Page', dateYMD(2025,2,21), dateYMD(2025,2,21), null, 0, null],
+        ['T27', 'Results Module', 'Case Studies Detail Page', dateYMD(2025,2,21), dateYMD(2025,2,21), null, 0, null],
+        // Mon 3/24:
+        ['T28', 'Results Module Calculator (javascript)', 'Case Studies Detail Page', dateYMD(2025,2,24), dateYMD(2025,2,24), null, 0, null],
+        ['T29', 'Global Carousel Animation 2 Integration (who we are carousel) [Case Studies Detail]', 'Case Studies Detail Page', dateYMD(2025,2,24), dateYMD(2025,2,24), null, 0, null],
+        ['T30', 'About Text Animation 1', 'About', dateYMD(2025,2,24), dateYMD(2025,2,24), null, 0, null],
+        ['T31', 'Text Animation 2 [About]', 'About', dateYMD(2025,2,24), dateYMD(2025,2,24), null, 0, null],
+        // Tue 3/25:
+        ['T32', 'Text Animation 3 (labeled 2) [About]', 'About', dateYMD(2025,2,25), dateYMD(2025,2,25), null, 0, null],
+        ['T33', 'Other Projects Module [About]', 'About', dateYMD(2025,2,25), dateYMD(2025,2,25), null, 0, null],
+        ['T34', 'Global Carousel Animation 2 Integration (who we are carousel) [About]', 'About', dateYMD(2025,2,25), dateYMD(2025,2,25), null, 0, null],
+        ['T35', 'Careers Header Text Animation 1', 'Careers', dateYMD(2025,2,25), dateYMD(2025,2,25), null, 0, null],
+        // Wed 3/26:
+        ['T36', 'WP installation for localhost development', 'Setup/Deployment', dateYMD(2025,2,26), dateYMD(2025,2,26), null, 0, null],
+        ['T37', 'Replicate wearesaatchi wordpress to localhost', 'Setup/Deployment', dateYMD(2025,2,26), dateYMD(2025,2,26), null, 0, null],
+        ['T38', 'Export & send final product', 'Setup/Deployment', dateYMD(2025,2,26), dateYMD(2025,2,26), null, 0, null]
+      ]);
+
+      var options = {
+        height: 800,
+        gantt: {
+          trackHeight: 30
+        }
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="chart_div"></div>
+</body>
+</html>

@@ -151,7 +151,7 @@ nav {
   background: rgba(0, 0, 0, 0.95);
   color: #ffffff;
   position: fixed;
-  z-index: 100;
+  z-index: -1;
   left: 0;
   top: 0;
   height: 100%;

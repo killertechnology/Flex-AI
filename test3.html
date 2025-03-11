@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swoosh Animated Logo with SVG</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* Styling the text */
+        .logo-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3498db;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Styling the swoosh line */
+        .swoosh-path {
+            fill: none;
+            stroke: #3498db;
+            stroke-width: 5;
+            stroke-dasharray: 700; /* length of the path */
+            stroke-dashoffset: 700;
+            animation: swoosh 3s linear 1; /* 1 iteration */
+        }
+
+        /* Keyframes for the swoosh animation along the path */
+        @keyframes swoosh {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <!-- The SVG swoosh path -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+            <path class="swoosh-path" d="M10,100 C 60,50, 120,150, 180,100 C 240,50, 300,150, 370,100" />
+        </svg>
+
+        <!-- The logo text -->
+        <div class="logo-text">My Swoosh Logo</div>
+    </div>
+
+</body>
+</html>

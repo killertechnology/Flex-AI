@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swoosh Animated Logo</title>
+    <style>
+        /* Reset body margins and center content */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling the logo container */
+        .logo-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Styling the logo text */
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3498db; /* Change text color */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Styling the swoosh line */
+        .swoosh {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            animation: swoosh 3s linear 1; /* 1 iteration */
+            transform-origin: center;
+            margin-top: -60px; /* Adjust to center the swoosh */
+            margin-left: -60px; /* Adjust to center the swoosh */
+        }
+
+        /* Keyframes for the swoosh animation at a 45-degree angle */
+        @keyframes swoosh {
+            0% {
+                transform: rotate(0deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(90deg) translate(100px, 100px);
+            }
+            50% {
+                transform: rotate(180deg) translate(0, 200px);
+            }
+            75% {
+                transform: rotate(270deg) translate(-100px, 100px);
+            }
+            100% {
+                transform: rotate(360deg) translate(0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <div class="swoosh"></div>
+        <div class="logo">My Swoosh Logo</div>
+    </div>
+
+</body>
+</html>

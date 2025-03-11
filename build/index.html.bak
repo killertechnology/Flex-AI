@@ -1,0 +1,39 @@
+
+
+<html lang="en">
+<head>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="buttonwillow.css">
+    <script defer src="rainyday.js"></script>
+    <script>
+        function run() {
+            var image = document.getElementById('background');
+            image.onload = function () {
+                var engine = new RainyDay({
+                    image: this
+                });
+                engine.rain([
+                    [3,5,6]
+                ]);
+                engine.rain([
+                    [3, 3, 0.88],
+                    [5, 5, 0.9],
+                    [6, 2, 1]
+                ], 100);
+            };
+            image.crossOrigin = 'background';
+            image.src = './images/demo.jpg';
+        }
+
+    </script>
+</head>
+<body onload="run();">
+    <div id="root" align="top"><img className='rainbg' src="images/demo.jpg" id="background"></img></div>
+</body>
+</html>

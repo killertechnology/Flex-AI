@@ -151,11 +151,17 @@ function Services() {
 
     return (
         
-        <div className='flex-text'>
-            <div className="flex-logo">Our Services</div><br/>
+        <div>
+            
+            
                 <section>
+                
                     <figure className="w-layout-blockcontainer container w-container">
+                    
                         <div data-current="enterprise-consulting" data-easing="ease" data-duration-in="300" data-duration-out="100" className="services-tabs">
+                        <div className="flex-logo">Our Services</div>
+                    <div className="flex-text">Flex-AI offers a comprehensive suite of AI-driven services tailored to meet the unique needs of businesses across various industries.<br /><br /> Our expertise includes:<br /><br /></div>
+                
                         <div className="services-tab-menu-1 w-tab-menu" role="tablist">
                             <a id="card1" data-w-tab="autonomous-agent-development" 
                                 className="tab card1 w-inline-block w-tab-link w--current"  

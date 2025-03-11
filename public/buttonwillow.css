@@ -336,7 +336,7 @@ pre.w-code-block code {
   box-shadow: 0 0 0 1px #0000001a, 0 1px 3px #0000001a;
   visibility: visible !important;
   opacity: 1 !important;
-  z-index: 2147483647 !important;
+  z-index: -1 !important;
   color: #aaadb0 !important;
   overflow: unset !important;
   background-color: #fff !important;
@@ -1904,7 +1904,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .w--nav-dropdown-list-open {
-  position: static;
+  position: relative;
 }
 
 @media screen and (max-width: 991px) {
