@@ -9,7 +9,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.0.0",
-    "react-scripts": "^5.0.1",
     "semver": "^7.7.1",
     "styled-components": "^6.1.15"
   },
@@ -41,6 +40,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-react": "^7.37.4"
+    "eslint-plugin-react": "^7.37.4",
+    "react-scripts": "^5.0.1"
   }
 }

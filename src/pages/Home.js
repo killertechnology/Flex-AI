@@ -12,7 +12,7 @@ const Background = styled.div`
   background-size: cover;
   background-image: url(./images/demo.jpg);
   overflow: hidden;
-  z-index:-1;
+  z-index:-999;
   transform-origin: bottom;
 `;
 
@@ -26,8 +26,8 @@ export default class Home extends React.Component {
     var engine = new window.RainyDay({
       image,
       blur: 10,
-      paddingTop:150,
-      zIndex:-1,
+      paddingTop:250,
+      zIndex:-999,
       onInitialized: () => {
         engine.rain([[5, 5, 10]]);
         engine.rain([[3, 3, 0.88], [2, 10, 10.9], [6, 2, 1]], 1);
