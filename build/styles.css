@@ -37,6 +37,12 @@ body {
 
 } 
 
+
+/* Disables all pointer interactions (click, hover, etc.) on the canvas/iframe */
+canvas, iframe {
+  pointer-events: none !important;
+}
+
 /* Container for the video background */
 .video-background {
     position: fixed;
@@ -73,6 +79,9 @@ p {
 
     margin-left: 30px;
     margin-top: 10px;
+    position:relative;
+    z-index: 999;
+    text-align: center;
     
 }
 
@@ -109,12 +118,14 @@ p {
     background-color: #fff0;
     border-radius: 3px;
     justify-content: left;
-    align: left;
+    text-align: center;
     margin: 0 1px;
     padding: 5px;
     text-decoration: none;
     transition: background-color .2s;
-    z-index: 1000;
+    position:relative;
+    z-index: 999;
+
   }
 
   .flex-text2{
@@ -146,7 +157,7 @@ p {
     text-decoration: none;
     transition: background-color .2s;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    z-index: 1000;
+    z-index: 21474836471000;
 
   }
 
@@ -159,7 +170,8 @@ p {
     max-height: 100px;
     margin-left: 0;
     margin-right: 0;
-    z-index: 1001;
+    z-index: 21474836471001;
+    position: relative;
   }
 
   
@@ -202,10 +214,11 @@ p {
     max-width: 100%;
     height: 60vh;
     max-height: 100px;
-    position: static;
+    position:relative;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #87a7a7; /* Complementary pastel color */
+   
 }
 
 .navbar a {
@@ -474,6 +487,8 @@ a:focus, button:focus {
       /*background-color: #ffffff;*/
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 2147483648;
+      position: absolute;
   }
 
   
@@ -494,3 +509,4 @@ a:focus, button:focus {
   .div-block-2._2 {
     background-color: #77fa9c;
   }
+

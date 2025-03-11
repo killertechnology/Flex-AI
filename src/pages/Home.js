@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+// rainyday-wrapper.js
+import './rainyday.js'; // This file sets window.RainyDay
+//export const RainyDay = window.RainyDay;
+
 
 const Background = styled.div`
   height: 100vh;
@@ -19,27 +23,24 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     const image = this.ref.current;
-    var engine = new RainyDay({
+    var engine = new window.RainyDay({
       image,
       blur: 10,
       paddingTop:150,
       zIndex:-1,
       onInitialized: () => {
-        engine.rain([[6, 8, 6]]);
-        engine.rain([[3, 3, 0.88], [5, 5, 0.9], [6, 2, 1]], 100);
+        engine.rain([[5, 5, 10]]);
+        engine.rain([[3, 3, 0.88], [2, 10, 10.9], [6, 2, 1]], 1);
       }
     });
   }
+
 
   render() {
     return(
       <>
         <Background ref={this.ref} style={{ zIndex:-1 }} />
         <div className="container">
-          <div className="contentOverlay">
-            This is my overlay content.<br />
-            <img src="./images/dm3.jpg" width={100} ></img>
-          </div>
           <div className='content1'>
                 <div className="video-background">
                     {/* <video autoplay="true" loop muted playsinline>

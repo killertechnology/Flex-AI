@@ -1904,7 +1904,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .w--nav-dropdown-list-open {
-  position: static;
+  position: relative;
 }
 
 @media screen and (max-width: 991px) {

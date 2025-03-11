@@ -50,7 +50,11 @@ function RainyDay(options) {
   
     Object.keys(this).forEach(function(item) {
       delete this[item];
+<<<<<<< HEAD
+    }); 
+=======
     });
+>>>>>>> 86206ae21dc104a45faa97c0558392d2d74b81f3
   };
   
   /**
