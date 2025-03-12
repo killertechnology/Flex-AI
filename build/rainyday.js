@@ -50,11 +50,7 @@ function RainyDay(options) {
   
     Object.keys(this).forEach(function(item) {
       delete this[item];
-<<<<<<< HEAD
     }); 
-=======
-    });
->>>>>>> 86206ae21dc104a45faa97c0558392d2d74b81f3
   };
   
   /**
@@ -139,14 +135,14 @@ function RainyDay(options) {
       canvas.style.zIndex = this.img.style.zIndex;
       this.img.style.zIndex += 1;
     } else {
-      canvas.style.zIndex = 99;
+      canvas.style.zIndex = -9999;
     }
     // this.options.parentElement.appendChild(canvas);
     if (this.imgSource) {
       this.options.parentElement.parentNode.insertBefore(canvas, this.imgSource);
   
       // Set z-index to show canvas on top of img/element
-      this.imgSource.style.zIndex = 100;
+      this.imgSource.style.zIndex = -9999;
       this.imgSource.style.position = position;
       this.imgSource.style.top = top;
       this.imgSource.style.left = left;

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 // rainyday-wrapper.js
+
 import './rainyday.js'; // This file sets window.RainyDay
 //export const RainyDay = window.RainyDay;
 
@@ -14,19 +15,25 @@ const Background = styled.div`
   overflow: hidden;
   z-index:-999;
   transform-origin: bottom;
+  padding-top:250;
 `;
 
+var engine = null;
+
+
+
 export default class Home extends React.Component {
- 
+  
+
  /**/
     ref = React.createRef();
 
   componentDidMount() {
     const image = this.ref.current;
-    var engine = new window.RainyDay({
+    engine = new window.RainyDay({
       image,
       blur: 10,
-      paddingTop:250,
+      paddingTop:350,
       zIndex:-999,
       onInitialized: () => {
         engine.rain([[5, 5, 10]]);
@@ -35,19 +42,30 @@ export default class Home extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    // This runs just before the component unmounts (navigating away)
+    // 1) Remove the RainyDay canvas from the DOM
+    const canvas = document.querySelector('canvas');
+    if (canvas && canvas.parentNode) {
+      canvas.parentNode.removeChild(canvas);
+    }
+
+    // 2) (Optional) null out any references
+    engine = null;
+  }
 
   render() {
     return(
       <>
-        <Background ref={this.ref} style={{ zIndex:-1 }} />
+      <Background ref={this.ref} style={{   }} />
         <div className="container">
           <div className='content1'>
-                <div className="video-background">
-                    {/* <video autoplay="true" loop muted playsinline>
+                {/*<div className="video-background">
+                     <video autoplay="true" loop muted playsinline>
                         <source src="highway-loop.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video> */}
-                </div>
+                    </video> 
+                </div>*/}
 
                 <h1 className="flex-logo">Welcome to Flex AI</h1>
                 <h3 className="flex-text">An AI Services Company</h3>
@@ -58,6 +76,7 @@ export default class Home extends React.Component {
                 </p>
             </div>
         </div>
+        
       </>
     );
   }
