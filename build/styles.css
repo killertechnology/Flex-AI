@@ -1,11 +1,4 @@
 
-        body {
-            overflow: auto;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
         .rainbg {
             width: 100%;
             height: 100%;
@@ -17,25 +10,25 @@
           width:100%;
         }
 /**/
-body {
-        line-height: 1.6;
+body { 
+    overflow:visible;
+    margin: 0px;
     color: #000;
-    font-family: Montserrat, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-      background-color: #fff;
-    min-height: 100%;
-    font-family: Arial, sans-serif;
     
-    background-color: #f9f9f9;
     font-family: Montserrat, sans-serif;
-
+    
 /*background-image: radial-gradient(circle, #fffffff5 18%, #e7f1ff), url("washed_out_image.png");*/
  
 } 
 
+html {
 
+  
+  margin:0px;
+  width:100%;
+}
+
+td { height:1px; }
 /* Disables all pointer interactions (click, hover, etc.) on the canvas/iframe */
 canvas, iframe {
   pointer-events: none !important;
@@ -44,6 +37,17 @@ canvas, iframe {
 #root {
   width:100%;
 }
+
+.content-box {
+
+  padding:15px;
+
+}
+.button-container {
+padding: 20px;
+border: 1px black;
+}
+
 /* Container for the video background */
 .video-background {
     position: fixed;
@@ -72,13 +76,15 @@ canvas, iframe {
   }
   
 p {
-  font-size: 16pt;
+  
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width:99%;
+  padding: 0;
+  
 }
 .content1 {
 
-    margin-left: 30px;
+    padding-left: 5px;
     margin-top: 10px;
     position:relative;
     z-index: 500;
@@ -103,10 +109,8 @@ p {
     font-size: 24px;
     background-color: #fff0;
     border-radius: 3px;
-    justify-content: left;
-    text-align: left;
-    margin: 10 0px;
-    padding-top: 10px;
+    text-align: center;
+    margin: 4 0px;
     text-decoration: none;
     transition: background-color .2s;
     z-index: 500;
@@ -241,10 +245,25 @@ p {
  z-index: 1004;
  background-color: #000000;
  width: 100%;
+ height: 100px;
 }
 
 .nav-middle{
 
+}
+div {
+  font-size: 15pt;
+  line-height: 24px;
+}
+.project-card {
+  width:100%;
+  text-align: center;
+  position: relative;
+}
+
+.content-box {
+  width:100%;
+  text-align: center;
 }
 
 .nav-right {
@@ -279,7 +298,7 @@ p {
     justify-content: space-between;
     height: 20px;
     cursor: pointer;
-    margin-right: 20px; /* Space between hamburger and nav links */
+    margin-right: 0px; /* Space between hamburger and nav links */
     background-color: rgb(224, 79, 79);
     text-align: right;
     width: 100%;
@@ -291,6 +310,7 @@ p {
     width: 25px;
     height: 3px;
     background-color: #ffffff; /* Adjust color as needed */
+    text-align: right;
   }
   
   .nav-links {
@@ -317,10 +337,12 @@ p {
     .hamburger {
         display: flex;
         height: 29px;
-        width: 67px;
+        width: 84px;
        vertical-align: top;
        padding:5px;
-        
+       text-align: right;
+       position: fixed;
+       z-index: 91000;
     }
 
     .menu {
@@ -338,24 +360,26 @@ p {
         flex-direction: column;
         width: 180px;
         text-wrap:normal;
-        
+        padding-top:15px;
         
     }
 
     .nav-links.active {
         display: flex;
         background-color: #000;
+        padding-top:15px;
+        z-index:200;
     }
     .nav-middle{
         display: flex;
         justify-content: flex-end; /* Aligns child elements to the right */
         width: 106%;
-        padding:25px;
+        padding-top:15px;
     }
 
     .nav-right {
         width: 100%;
-        z-index: 1009;
+        padding-top:15px;
 
         display: flex; /* Use Flexbox for alignment */
         justify-content: flex-end; /* Aligns child elements to the right */
@@ -400,17 +424,19 @@ a:focus, button:focus {
 .subtab {
 
     margin-bottom: 2px;
-    padding-left:15px;
     background-color: #e8e8e8;
     border: 1px solid #000;
     border-radius: 8px;
     justify-content: center;
     align-items: center;
-    padding: 18px 35px;
+    padding: 5px 5px;
     font-size: 12px;
     line-height: 18px;
     transition: transform .1s;
     display: flex;
+    font-weight:bolder;
+    height:50px;
+    width:160px;
   }
   
   .subtab:hover {
@@ -427,6 +453,12 @@ a:focus, button:focus {
     width: 100%;
   }
 
+  .services-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  
 
 .w-tabs {
     position: relative;
@@ -444,25 +476,16 @@ a:focus, button:focus {
     align-items: center;
     display: flex;
     width: 100%;
+    
     margin-left: 1px;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: 1fr;
     display: grid;
-    padding:10px;
+    padding:5px;
   }
-
-  .w-tabs:after {
-    clear: both;
-  }
-
-  .services-individual-box {
-    width: 89%;
-    align:center;
-  }
-
   
   .services-tabs {
     width: 90%;
@@ -476,6 +499,11 @@ a:focus, button:focus {
     margin-top: 30px;
   }
   
+  .w-tabs:after {
+    clear: both;
+  }
+
+ 
 
 .container {
     

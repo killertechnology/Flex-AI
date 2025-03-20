@@ -21,11 +21,19 @@ const Background = styled.div`
 var engine = null;
 
 
+export default function Home() {
+//export default class Home extends React.Component {
+  // Track page load event once on mount
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('event', 'flexai_home_page_load', {
+        event_category: 'FlexAI_Site',
+        event_label: 'Page Loaded'
+      });
+    }
+  }, []);
 
-export default class Home extends React.Component {
-  
-
- /**/
+ /*
     ref = React.createRef();
 
   componentDidMount() {
@@ -52,13 +60,12 @@ export default class Home extends React.Component {
 
     // 2) (Optional) null out any references
     engine = null;
-  }
-
-  render() {
+  }<Background ref={this.ref} style={{   }} />
+*/
+  
     return(
       <>
-      <Background ref={this.ref} style={{   }} />
-        <div className="container">
+      
           <div className='content1'>
                 {/*<div className="video-background">
                      <video autoplay="true" loop muted playsinline>
@@ -72,12 +79,11 @@ export default class Home extends React.Component {
                 
                 <p className="flex-text">We provide responsible AI integrations to elevate your business.</p>
                 <p className="flex-text" align="center">
-                    <img src='flex-ai-logo.png' width='400'></img>
+                    <img src='flex-ai-logo.png' width='80%'></img>
                 </p>
             </div>
-        </div>
         
       </>
     );
-  }
+  
 }

@@ -5,32 +5,71 @@ function Projects() {
         <div className='content1'>
             
 
-            <h1 className="flex-logo">Projects</h1>
-            <h3 className="flex-text-large">CGM Personal Trainer</h3>
+            <b className="flex-logo">Projects</b><br />
+            Explore some of the AI-driven and technology-focused projects I've worked on.
             
-            <p className="flex-text">Your AI-powered CGM Personal Trainer app differs from existing diabetes apps, setting it apart as an engagement-based diabetes coaching system. Users get daily scores based on their blood glucose control patterns.
-                <ul>
-                <li>Blood glucose event tracking</li>
-                <li>Rewards for well-timed boluses and stable glucose levels</li>
-                <li>Warning indicators for delayed insulin delivery or lack of correction</li>
-                <li>Scores are adjusted based on behavioral trends over time, leading to a habit-forming feedback loop.</li>
-                </ul>
-            </p>
-            <p className="flex-text" align="center">
-            <a href='http://dexcomtrainer.flex-ai.com'><img src='flex-ai-logo.png' width='400'></img></a>
-            </p>
+<div className="project-card">
+    <table border={0} cellPadding={0} cellSpacing={0} width={"80%"} height="1" align="center">
+        <tbody>
+            <tr>
+                <td valign='top' height={1}>
+                    <div id="cgm-trainer" className="content-box">
+                        <a href='http://personaltrainer.flex-ai.com' target='new'><b>CGM Personal Trainer</b></a><br />
+                        T1D is a serious disease that affects millions of people. This CGM Personal Trainer gamifies blood glucose management using real-time data from CGM devices. 
+                        It assigns scores based on time-in-range performance, provides feedback on insulin timing, and rewards users 
+                        for maintaining stable glucose levels. The app encourages better diabetes management through engagement and interactive insights.
+                        <br /><a href='http://personaltrainer.flex-ai.com' target='new'><img src='../images/home4.webp' width="350"></img></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+            
 
 
-            <h3 className="flex-text-large">AI Personal Assistant Sales Force</h3>
-            
-            <p className="flex-text">We provide responsible AI integrations to elevate your business.</p>
-            <p className="flex-text" align="center">
-            <img src='flex-ai-logo.png' width='400'></img>
-            </p>
-            
+<div className="project-card">
+    <table border={0} cellPadding={0} cellSpacing={0} width={"80%"} height="1" align="center">
+        <tbody>
+            <tr>
+                <td>
+                    <div id="cgm-trainer" className="content-box">
+                        <p><a href='http://earthquake.flex-ai.com' target='new'><b>AI Earthquake Detector</b></a><br />
+                        The Earthquake Application provides real-time earthquake alerts, safety recommendations, and historical seismic activity data. 
+           It utilizes AI and geospatial analytics to predict potential aftershocks and guide users through preparedness and response measures. 
+           The app is designed to enhance public safety by delivering accurate and timely information.
+                        <br /><a href='http://earthquake.flex-ai.com' target='new'><img src='../images/home1.webp' width="350"></img></a></p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div className="project-card">
+<table border={0}  cellPadding={0} cellSpacing={0} width={"80%"} height="1" align="center">
+        <tbody>
+            <tr>
+                <td>
+                    <div id="cgm-trainer" className="content-box">
+                        <p><a href='http://aiassistant.flex-ai.com' target='new'><b>AI Personal Assistant (Bland.io)</b></a><br />
+                        The AI Personal Assistant on Bland.io is designed to streamline daily tasks, enhance productivity, and provide intelligent automation. 
+           It integrates with various services to manage schedules, answer queries, and execute commands efficiently. 
+           With natural language processing and adaptive learning, the assistant evolves to meet user needs more effectively over time.
+                        <br /><a href='http://aiassistant.flex-ai.com' target='new'><img src='../images/phoneassistant.webp' width="350"></img></a></p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+        
                 
         </div>
     );
 }
 
 export default Projects;
+
+
