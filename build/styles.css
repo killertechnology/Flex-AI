@@ -1,14 +1,5 @@
 
-        .rainbg {
-            width: 100%;
-            height: 100%;
-            z-index: -999;
-        }
-
-        canvas {
-          z-index: -9999;
-          width:100%;
-        }
+       
 /**/
 body { 
     overflow:visible;
@@ -21,22 +12,12 @@ body {
  
 } 
 
-html {
-
-  
-  margin:0px;
-  width:100%;
-}
-
 td { height:1px; }
 /* Disables all pointer interactions (click, hover, etc.) on the canvas/iframe */
 canvas, iframe {
   pointer-events: none !important;
 }
 
-#root {
-  width:100%;
-}
 
 .content-box {
 
@@ -84,18 +65,18 @@ p {
 }
 .content1 {
 
-    padding-left: 5px;
     margin-top: 10px;
     position:relative;
     z-index: 500;
     text-align: center;
+    border-color: white;
     
 }
 
 .logo{
     color: #000000;
     justify-content: left;
-    align: left;
+    text-align: left;
     margin: 0 0px;
     padding: 0px;
     text-decoration: none;
@@ -256,14 +237,15 @@ div {
   line-height: 24px;
 }
 .project-card {
-  width:100%;
+  padding:1px;
   text-align: center;
   position: relative;
 }
 
 .content-box {
   width:100%;
-  text-align: center;
+  text-align: left;
+  padding-top: 10px;
 }
 
 .nav-right {
@@ -373,7 +355,7 @@ div {
     .nav-middle{
         display: flex;
         justify-content: flex-end; /* Aligns child elements to the right */
-        width: 106%;
+        width: 100%;
         padding-top:15px;
     }
 
