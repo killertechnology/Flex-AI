@@ -45,9 +45,9 @@ function InstacartProjectCard() {
             <tbody>
                 <tr>
                     <td valign='top' height={1}>
-                        <div><a href='http://personaltrainer.flex-ai.com' target='new'><img src='../images/home4.webp' width="350"></img></a></div>
+                        <div><a href='https://personaltrainer.flex-ai.com' target='new'><img src='../images/home4.webp' width="350"></img></a></div>
                         <div id="cgm-trainer" className="content-box">
-                            <a href='http://personaltrainer.flex-ai.com' target='new'><b>CGM Personal Trainer</b></a><br />
+                            <a href='https://personaltrainer.flex-ai.com' target='new'><b>CGM Personal Trainer</b></a><br />
                             T1D is a serious disease that affects millions of people. This CGM Personal Trainer gamifies blood glucose management using real-time data from CGM devices. 
                             It assigns scores based on time-in-range performance, provides feedback on insulin timing, and rewards users 
                             for maintaining stable glucose levels. The app encourages better diabetes management through engagement and interactive insights.
@@ -63,9 +63,9 @@ function InstacartProjectCard() {
             <tbody>
                 <tr>
                     <td>
-                        <div><a href='http://earthquake.flex-ai.com' target='new'><img src='../images/home1.webp' width="350"></img></a></div>
+                        <div><a href='https://earthquake.flex-ai.com' target='new'><img src='../images/home1.webp' width="350"></img></a></div>
                         <div id="earthquake-ai" className="content-box">
-                            <p><a href='http://earthquake.flex-ai.com' target='_blank'><b>AI Earthquake Detector</b></a><br />
+                            <p><a href='https://earthquake.flex-ai.com' target='_blank'><b>AI Earthquake Detector</b></a><br />
                             The Earthquake Application provides real-time earthquake alerts, safety recommendations, and historical seismic activity data. 
             It utilizes AI and geospatial analytics to predict potential aftershocks and guide users through preparedness and response measures. 
             The app is designed to enhance public safety by delivering accurate and timely information.
@@ -80,7 +80,7 @@ function InstacartProjectCard() {
             <tbody>
                 <tr>
                     <td>
-                        <div><a href='http://hotdogornothotdog.com' target='_new'><img src='../images/newcircus-home.jpg' width="350"></img></a></div>
+                        <div><a href='https://hotdogornothotdog.com' target='_new'><img src='../images/newcircus-home.jpg' width="350"></img></a></div>
                         <div id="hotdog-nothotdog" className="content-box">
                             <p><a href='https://hotdogornothotdog.com' target='_blank'><b>Hot Dog or Not Hot Dog??</b></a><br />
                             The ultimate homage to the classic Silicon Valley episode that had everyone laughing while debating AI classification of a hot dog. Our playful AI image classifier harnesses OpenAI's GPT-Vision 4 LLM to instantly determine if an image is a genuine hot dog, showcasing the remarkable capabilities of modern AI image classification. Embrace a fun twist on a tech classic and witness how humor meets high performance at HotDogOrNotHotDog.com.
