@@ -77,10 +77,11 @@ export default function Home() {
                 <h1 className="flex-logo">Welcome to Flex AI</h1>
                 <h3 className="flex-text">An AI Services Company</h3>
                 
-                <p className="flex-text">We provide responsible AI integrations to elevate your business.</p>
                 <p className="flex-text" align="center">
-                    <img src='flex-ai-logo.png' width='80%'></img>
+                    <img src='/images/flex-ai-home.jpeg' width='50%'></img>
                 </p>
+                <p className="flex-text">We provide responsible AI integrations to elevate your business.</p>
+                
             </div>
         
       </>
