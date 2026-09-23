@@ -1,46 +1,36 @@
 {
-  "name": "flex-ai",
-  "version": "0.1.0",
+  "name": "flex-ai-site",
   "private": true,
-  "dependencies": {
-    "jquery": "^3.7.1",
-    "quick-sort": "^0.2.1",
-    "rainyday": "^0.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.0.0",
-    "semver": "^7.7.1",
-    "styled-components": "^6.1.15"
-  },
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite --host 0.0.0.0",
+    "dev:premium": "VITE_THEME=premium-ice vite --host 0.0.0.0 --port 8088",
+    "dev:pro": "VITE_THEME=pro-shop vite --host 0.0.0.0 --port 8089",
+    "dev:modern": "VITE_THEME=penguin-modern vite --host 0.0.0.0 --port 8090",
+    "dev:classic": "VITE_THEME=penguin-classic vite --host 0.0.0.0 --port 8091",
+    "dev:all": "concurrently -n premium,pro,modern,classic -c cyan,red,green,yellow \"npm run dev:premium\" \"npm run dev:pro\" \"npm run dev:modern\" \"npm run dev:classic\"",
+    "generate:assets": "node scripts/generate-assets.mjs",
+    "download:product-images": "node scripts/download-product-images.mjs",
+    "verify": "node scripts/verify.mjs",
+    "build": "tsc -b && vite build",
+    "build:all": "npm run verify && npm run build",
+    "screenshots": "node scripts/capture-screenshots.mjs"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^8.2.2",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "sharp": "latest",
+    "vite": "^5.4.21"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "eslint": "^8.57.1",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-react": "^7.37.4",
-    "react-scripts": "^5.0.1"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright": "latest",
+    "typescript": "latest"
   }
 }

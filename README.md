@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Flex AI Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the Flex AI marketing website and the protected Penguin Skate concept previews currently deployed through S3 and CloudFront.
 
-## Available Scripts
+## Repository Layout
 
-In the project directory, you can run:
+```text
+.
+├── src/                  React storefront concept app
+├── data/                 Product catalog and sourcing audit data
+├── public/images/        Shared concept imagery and product assets
+├── scripts/              Asset, verification, and screenshot utilities
+├── docs/                 Catalog, migration, and deployment notes
+└── static-site/          Flex AI static marketing pages and latest built concept shells
+```
 
-### `npm start`
+The React app powers the four Penguin Skate concept previews:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `penguin-classic` -> `/concept-a/`
+- `penguin-modern` -> `/concept-b/`
+- `pro-shop` -> `/concept-c/`
+- `premium-ice` -> `/concept-d/`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The `static-site/` folder contains the Flex AI public pages, client portal login pages, legal pages, strategy pages, and the latest deployed concept HTML/CSS/JS bundles. Duplicated generated concept image folders were intentionally not copied into `static-site/`; the canonical image assets live once under `public/images/`.
 
-### `npm test`
+## Install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+## Run Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run a single default theme:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run all four concepts:
 
-### `npm run eject`
+```bash
+npm run dev:all
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Individual concept themes:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run dev:premium  # http://localhost:8088
+npm run dev:pro      # http://localhost:8089
+npm run dev:modern   # http://localhost:8090
+npm run dev:classic  # http://localhost:8091
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Verify
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run verify
+npm run build
+```
 
-## Learn More
+## Current AWS Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Region: `us-west-2`
+- S3 bucket: `flex-ai-650433001040-us-west-2`
+- Production domain: `flex-ai.com`
+- Concept paths: `/concept-a/`, `/concept-b/`, `/concept-c/`, `/concept-d/`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The CloudFront functions and deployment notes live in `static-site/cloudfront-concept-rewrite.js` and `docs/aws-deployment.md`.

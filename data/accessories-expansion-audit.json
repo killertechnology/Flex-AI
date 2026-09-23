@@ -1,0 +1,24 @@
+{
+  "removed": [
+    "Big League Chew Original Bubble Gum",
+    "Big League Chew Blue Raspberry Bubble Gum"
+  ],
+  "replacementAdded": [
+    {
+      "id": "prod_accessory_expansion_019",
+      "title": "CCM Snipers Edge Training Stick Weight",
+      "price": 21.99,
+      "images": 4,
+      "sourceUrl": "https://www.thehockeyshop.com/products/ccm-sniper-s-edge-training-stick-weight"
+    },
+    {
+      "id": "prod_accessory_expansion_020",
+      "title": "Blade Armor Senior Ice Hockey Tape",
+      "price": 6.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/blade-armor-senior-ice-hockey-tape"
+    }
+  ],
+  "batchCount": 30,
+  "accessoriesTotal": 106
+}

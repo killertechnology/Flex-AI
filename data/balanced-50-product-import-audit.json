@@ -1,0 +1,414 @@
+{
+  "added": [
+    {
+      "id": "prod_balanced_001",
+      "title": "CCM RIBCOR 90K Senior Hockey Skates",
+      "category": "Skates",
+      "price": 419.97,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/ccm-ribcor-90k-senior-hockey-skates"
+    },
+    {
+      "id": "prod_balanced_002",
+      "title": "CCM RIBCOR 88K Senior Hockey Skates",
+      "category": "Skates",
+      "price": 199.95,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/ccm-ribcor-88k-senior-hockey-skates"
+    },
+    {
+      "id": "prod_balanced_003",
+      "title": "Bauer Vapor X Select Senior Hockey Skates - 2021",
+      "category": "Skates",
+      "price": 124.9,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-vapor-x-select-senior-hockey-skates"
+    },
+    {
+      "id": "prod_balanced_004",
+      "title": "Bauer Vapor X Velocity Senior Hockey Skates - 2021",
+      "category": "Skates",
+      "price": 314.97,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-vapor-x-velocity-senior-hockey-skates-s21"
+    },
+    {
+      "id": "prod_balanced_005",
+      "title": "Bauer Vapor 3X Senior Hockey Skates",
+      "category": "Skates",
+      "price": 349.97,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-vapor-3x-senior-hockey-skates"
+    },
+    {
+      "id": "prod_balanced_006",
+      "title": "Bauer Vapor X3.7 Senior Hockey Skates",
+      "category": "Skates",
+      "price": 263.98,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-vapor-x3-7-senior-hockey-skates"
+    },
+    {
+      "id": "prod_balanced_007",
+      "title": "Bauer Vapor League Pro Stock Senior Hockey Stick (2023)",
+      "category": "Sticks",
+      "price": 149.9,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-vapor-league-senior-hockey-stick-2023"
+    },
+    {
+      "id": "prod_balanced_008",
+      "title": "Bauer Vapor FlyLite Senior Hockey Stick",
+      "category": "Sticks",
+      "price": 439.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-vapor-flylite-senior-hockey-stick"
+    },
+    {
+      "id": "prod_balanced_009",
+      "title": "Bauer Nexus Tracer Senior Hockey Stick",
+      "category": "Sticks",
+      "price": 299.98,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-nexus-tracer-senior-hockey-stick"
+    },
+    {
+      "id": "prod_balanced_010",
+      "title": "TRUE HZRDUS 9X Senior Hockey Stick 2022",
+      "category": "Sticks",
+      "price": 194.9,
+      "images": 5,
+      "sourceUrl": "https://www.thehockeyshop.com/products/true-hzrdus-9x-senior-hockey-stick"
+    },
+    {
+      "id": "prod_balanced_011",
+      "title": "CCM Jetspeed FT8 Pro Senior Hockey Stick - Silver",
+      "category": "Sticks",
+      "price": 307.97,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/ccm-jetspeed-ft8-pro-senior-hockey-stick-silver"
+    },
+    {
+      "id": "prod_balanced_012",
+      "title": "CCM RIBCOR Trigger 10 Pro Senior Hockey Stick",
+      "category": "Sticks",
+      "price": 307.97,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/ccm-ribcor-trigger-10-pro-senior-hockey-stick"
+    },
+    {
+      "id": "prod_balanced_013",
+      "title": "Bauer 5100 Hockey Helmet",
+      "category": "Protective",
+      "price": 69.95,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-5100-hockey-helmet"
+    },
+    {
+      "id": "prod_balanced_014",
+      "title": "Bauer IMS 5.0 Hockey Helmet",
+      "category": "Protective",
+      "price": 47.98,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-ims-5-0-hockey-helmet"
+    },
+    {
+      "id": "prod_balanced_015",
+      "title": "Bauer Lil Sport Hockey Helmet / Cage Combo",
+      "category": "Protective",
+      "price": 69.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-lil-sport-hockey-helmet-cage-combo"
+    },
+    {
+      "id": "prod_balanced_016",
+      "title": "Bauer Prodigy 2.0 Youth Hockey Helmet",
+      "category": "Protective",
+      "price": 59.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-prodigy-2-0-youth-hockey-helmet"
+    },
+    {
+      "id": "prod_balanced_017",
+      "title": "Bauer Prodigy 2.0 Youth Hockey Helmet / Cage Combo",
+      "category": "Protective",
+      "price": 69.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-prodigy-2-0-youth-hockey-helmet-cage-combo"
+    },
+    {
+      "id": "prod_balanced_018",
+      "title": "Bauer Prodigy Youth Hockey Helmet",
+      "category": "Protective",
+      "price": 59.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/bauer-prodigy-youth-hockey-helmet"
+    },
+    {
+      "id": "prod_balanced_019",
+      "title": "Warrior Ritual F2 Pro Senior Goalie Mask - Pro Certified",
+      "category": "Goalie",
+      "price": 1049.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/warrior-ritual-f2-pro-senior-goalie-mask-pro-certified"
+    },
+    {
+      "id": "prod_balanced_020",
+      "title": "Warrior Ritual F2 Pro Senior Goalie Mask",
+      "category": "Goalie",
+      "price": 1049.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/warrior-ritual-f2-pro-senior-goalie-mask"
+    },
+    {
+      "id": "prod_balanced_021",
+      "title": "Warrior Ritual F2 E+ Senior Goalie Mask - Pro Certified",
+      "category": "Goalie",
+      "price": 519.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/warrior-ritual-f2-e-senior-goalie-mask-pro-certified-1"
+    },
+    {
+      "id": "prod_balanced_022",
+      "title": "Warrior Ritual F2 E+ Senior Goalie Mask",
+      "category": "Goalie",
+      "price": 519.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/warrior-ritual-f2-e-senior-goalie-mask-1"
+    },
+    {
+      "id": "prod_balanced_023",
+      "title": "Warrior Ritual F2 E+ Junior Goalie Mask - Pro Certified",
+      "category": "Goalie",
+      "price": 519.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/warrior-ritual-f2-e-junior-goalie-mask-pro-certified-1"
+    },
+    {
+      "id": "prod_balanced_024",
+      "title": "Warrior Ritual F2 E+ Junior Goalie Mask",
+      "category": "Goalie",
+      "price": 519.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/warrior-ritual-f2-e-junior-goalie-mask"
+    },
+    {
+      "id": "prod_balanced_025",
+      "title": "Lowry Sports Grip Tape",
+      "category": "Accessories",
+      "price": 6.49,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/lowrys-grip-tape"
+    },
+    {
+      "id": "prod_balanced_026",
+      "title": "Lowry Sports Pro-Grade White Hockey Stick Tape (6 Pack)",
+      "category": "Accessories",
+      "price": 14.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/white-tape-6-pack"
+    },
+    {
+      "id": "prod_balanced_027",
+      "title": "Lowry Sports Pro-Grade Colored Hockey Stick Tape",
+      "category": "Accessories",
+      "price": 5.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/colored-tape"
+    },
+    {
+      "id": "prod_balanced_028",
+      "title": "Lowry Sports Pro-Grade Clear Hockey Sock Tape – 5 Pack (Small Roll)",
+      "category": "Accessories",
+      "price": 11.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/lowry-sports-pro-grade-clear-hockey-sock-tape-5-pack"
+    },
+    {
+      "id": "prod_balanced_029",
+      "title": "Lowry Sports Pro-Grade Hockey Sock Tape - Large Roll Clear (6 Pack)",
+      "category": "Accessories",
+      "price": 24.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockey-sock-tape-large-rolls-6-pack"
+    },
+    {
+      "id": "prod_balanced_030",
+      "title": "Lizard Skins Solid Hockey Grip Tape - 99cm",
+      "category": "Accessories",
+      "price": 21.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/lizard-skins-solid-color-hockey-tape"
+    },
+    {
+      "id": "prod_balanced_031",
+      "title": "Mr. Zogs Original Sex Wax Hockey Stick Wax",
+      "category": "Accessories",
+      "price": 6.99,
+      "images": 5,
+      "sourceUrl": "https://www.thehockeyshop.com/products/wax-dr-zogs-sex-wax-3228"
+    },
+    {
+      "id": "prod_balanced_032",
+      "title": "47 Brand AHL Clean Up Chasm Adjustable Hat -  Abbotsford Canucks",
+      "category": "Apparel",
+      "price": 36.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-ahl-clean-up-chasm-adjustable-hat-abbotsford-canucks"
+    },
+    {
+      "id": "prod_balanced_033",
+      "title": "47 Brand Basic MVP Youth Adjustable Hat - Hockey Canada Red",
+      "category": "Apparel",
+      "price": 29.99,
+      "images": 3,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-basic-mvp-youth-adjustable-hat-hockey-canada-red"
+    },
+    {
+      "id": "prod_balanced_034",
+      "title": "47 Brand Double Header Super Stripe Hitch Adjustable Hat - Hockey Canada",
+      "category": "Apparel",
+      "price": 44.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-double-header-super-stripe-hitch-adjustable-hat-hockey-canada"
+    },
+    {
+      "id": "prod_balanced_035",
+      "title": "47 Brand Dusted Bowline River Mens Hoody - Vancouver Canucks Skate Third",
+      "category": "Apparel",
+      "price": 99.95,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-dusted-bowline-river-mens-hoody-vancouver-canucks-skate-third"
+    },
+    {
+      "id": "prod_balanced_036",
+      "title": "47 Brand Dusted Imprint River Tee Shirt - Vancouver Canucks Skate Third",
+      "category": "Apparel",
+      "price": 29.95,
+      "images": 3,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-dusted-imprint-river-tee-shirt-vancouver-canucks-skate-third"
+    },
+    {
+      "id": "prod_balanced_037",
+      "title": "47 Brand Golden Age Sweep Check Eternal Lacer Mens Hoody - Hockey Canada",
+      "category": "Apparel",
+      "price": 159.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-golden-age-sweep-check-eternal-lacer-mens-hoody-hockey-canada"
+    },
+    {
+      "id": "prod_balanced_038",
+      "title": "47 Brand Golden Age Sweep Check Eternal Lacer Mens Hoody - Vancouver Canucks Third Skate",
+      "category": "Apparel",
+      "price": 159.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/47-brand-golden-age-sweep-check-eternal-lacer-mens-hoody-vancouver-canucks-third-skate"
+    },
+    {
+      "id": "prod_balanced_039",
+      "title": "HockeyShot Dryland Allstar Tiles - 10 Pack",
+      "category": "Training",
+      "price": 159.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockey-shot-dryland-allstar-tiles-10-pack"
+    },
+    {
+      "id": "prod_balanced_040",
+      "title": "HockeyShot Dangle 2.0 Hockey Puck",
+      "category": "Training",
+      "price": 29.99,
+      "images": 3,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockey-shot-dangle-2-0-hockey-puck"
+    },
+    {
+      "id": "prod_balanced_041",
+      "title": "HockeyShot Synthetic Ice Revolution Tiles - 10 Pack",
+      "category": "Training",
+      "price": 229.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockey-shot-revolution-skate-able-tiles-10-pack"
+    },
+    {
+      "id": "prod_balanced_042",
+      "title": "HockeyShot Extreme Radar 2.0",
+      "category": "Training",
+      "price": 169.99,
+      "images": 4,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockey-shot-extreme-radar"
+    },
+    {
+      "id": "prod_balanced_043",
+      "title": "HockeyShot Stickhandling Accessory Pack",
+      "category": "Training",
+      "price": 39.99,
+      "images": 2,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockeyshot-stickhandling-accessory-pack"
+    },
+    {
+      "id": "prod_balanced_044",
+      "title": "HockeyShot Extreme Shooter Tutor",
+      "category": "Training",
+      "price": 179.99,
+      "images": 6,
+      "sourceUrl": "https://www.thehockeyshop.com/products/hockeyshot-extreme-shooter-tutor"
+    },
+    {
+      "id": "prod_balanced_045",
+      "title": "Elite Edge Tune-Up Package",
+      "category": "Skate Services",
+      "price": 34.99,
+      "images": 3,
+      "sourceUrl": "Common skate-service workflows from hockey and figure skating pro shops."
+    },
+    {
+      "id": "prod_balanced_046",
+      "title": "Youth First-Fit Skate Check",
+      "category": "Skate Services",
+      "price": 24.99,
+      "images": 3,
+      "sourceUrl": "Common skate-service workflows from hockey and figure skating pro shops."
+    },
+    {
+      "id": "prod_balanced_047",
+      "title": "Goalie Runner Performance Sharpening",
+      "category": "Skate Services",
+      "price": 19.99,
+      "images": 3,
+      "sourceUrl": "Common skate-service workflows from hockey and figure skating pro shops."
+    },
+    {
+      "id": "prod_balanced_048",
+      "title": "Figure Blade Alignment Review",
+      "category": "Skate Services",
+      "price": 39.99,
+      "images": 3,
+      "sourceUrl": "Common skate-service workflows from hockey and figure skating pro shops."
+    },
+    {
+      "id": "prod_balanced_049",
+      "title": "Tournament Rush Sharpening",
+      "category": "Skate Services",
+      "price": 29.99,
+      "images": 3,
+      "sourceUrl": "Common skate-service workflows from hockey and figure skating pro shops."
+    },
+    {
+      "id": "prod_balanced_050",
+      "title": "Steel Swap and Holder Check",
+      "category": "Skate Services",
+      "price": 44.99,
+      "images": 3,
+      "sourceUrl": "Common skate-service workflows from hockey and figure skating pro shops."
+    }
+  ],
+  "counts": {
+    "Skates": 46,
+    "Sticks": 26,
+    "Protective": 37,
+    "Goalie": 27,
+    "Accessories": 76,
+    "Apparel": 19,
+    "Skate Services": 13,
+    "Training": 14
+  }
+}
