@@ -12,7 +12,6 @@ import { getTeamTheme, nhlTeams } from './data/nhlTeams';
 import { getActiveTheme } from './themes/themes';
 
 const theme = getActiveTheme();
-const heroImage = assetUrl(theme.heroImage);
 type NavEntry = { label: string; href: string; children?: { label: string; href: string; description?: string }[] };
 
 const navItems: NavEntry[] = [
@@ -135,7 +134,7 @@ export function App() {
       <Header favoriteTeamId={favoriteTeamId} onFavoriteTeamChange={setFavoriteTeamId} />
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage selectedTeamId={selectedTeam?.id} />} />
           <Route path="/collections/:handle" element={<CollectionPage />} />
           <Route path="/products/:slug" element={<ProductPage />} />
           <Route path="/brands" element={<BrandsPage />} />
@@ -281,11 +280,13 @@ function DesktopNavItem({ item, activeMenu, setActiveMenu }: { item: NavEntry; a
   );
 }
 
-function HomePage() {
+function HomePage({ selectedTeamId }: { selectedTeamId?: string }) {
   const featured = allProducts.filter((product) => product.featured).slice(0, 4);
   const newArrivals = allProducts.filter((product) => product.newArrival).slice(0, 4);
   const under75 = [...allProducts].filter((product) => product.price < 75).sort((a, b) => a.price - b.price).slice(0, 8);
   const sale = allProducts.filter((product) => product.sale).slice(0, 4);
+  const heroImage = assetUrl(selectedTeamId ? `/images/team-heroes/${selectedTeamId}.webp` : theme.heroImage);
+
   return (
     <>
       <section className="hero" style={{ backgroundImage: `linear-gradient(90deg, var(--hero-scrim), transparent), url(${heroImage})` }}>

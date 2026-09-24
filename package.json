@@ -11,6 +11,7 @@
     "dev:classic": "VITE_THEME=penguin-classic vite --host 0.0.0.0 --port 8091",
     "dev:all": "concurrently -n premium,pro,modern,classic -c cyan,red,green,yellow \"npm run dev:premium\" \"npm run dev:pro\" \"npm run dev:modern\" \"npm run dev:classic\"",
     "generate:assets": "node scripts/generate-assets.mjs",
+    "generate:team-heroes": "node scripts/generate-team-heroes.mjs",
     "download:product-images": "node scripts/download-product-images.mjs",
     "verify": "node scripts/verify.mjs",
     "build": "tsc -b && vite build",
