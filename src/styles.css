@@ -214,6 +214,14 @@ img { max-width: 100%; display: block; }
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+.site-header > .team-selector .team-legal-note {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 .team-selector.compact {
   margin: 2px 0 8px;
 }
@@ -224,6 +232,19 @@ img { max-width: 100%; display: block; }
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+.team-selector.compact .team-legal-note {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 700;
+  text-transform: none;
 }
 .team-select-control {
   position: relative;
@@ -768,6 +789,14 @@ footer { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; padding: 36px
   color: var(--text);
 }
 footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; font-size: 12px; font-weight: 900; color: var(--text); }
+.nhl-disclaimer {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  max-width: 980px;
+}
 
 @media (max-width: 1180px) {
   .site-header { grid-template-columns: auto 1fr auto auto auto; }

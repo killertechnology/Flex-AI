@@ -250,6 +250,7 @@ function FavoriteTeamSelector({ favoriteTeamId, onFavoriteTeamChange, compact = 
           ))}
         </div>
       </div>
+      <small className="team-legal-note">Team names are used for personalization only. Penguinscape is not affiliated with or endorsed by the NHL or its member clubs.</small>
     </label>
   );
 }
@@ -832,6 +833,7 @@ function Footer() {
     <footer>
       <div><strong>Penguin Skate & Sports Supply</strong><p>Storefront planning concept with MSRP/reference pricing, service details, and in-store pickup guidance.</p></div>
       <nav>{(theme.id === 'penguin-classic' ? [...classicNavItems, ...navItems.slice(5, 9)] : navItems).map((item) => <Link key={`${item.label}-${item.href}`} to={item.href}>{item.label}</Link>)}</nav>
+      <p className="nhl-disclaimer">NHL team names and abbreviations are used only for visitor personalization. Penguinscape is not affiliated with, sponsored by, or endorsed by the NHL or any NHL member club. No NHL logos or official team artwork are used.</p>
     </footer>
   );
 }
