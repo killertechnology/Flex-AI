@@ -4,9 +4,11 @@ import { ChevronDown, Menu, Search, ShoppingBag, UserRound, X } from 'lucide-rea
 import { analytics } from './core/analytics';
 import { assetUrl } from './core/assets';
 import { formatMoney, titleFromHandle } from './core/format';
+import { clearFavoriteTeam, createThemeCssVariables, getFavoriteTeam, setFavoriteTeam } from './core/themeEngine';
 import { normalize, productRepository } from './commerce/ProductRepository';
 import { useCart } from './commerce/CartContext';
 import type { Product, Variant } from './commerce/types';
+import { getTeamTheme, nhlTeams } from './data/nhlTeams';
 import { getActiveTheme } from './themes/themes';
 
 const theme = getActiveTheme();
@@ -115,6 +117,8 @@ function useScrollReveal() {
 
 export function App() {
   const location = useLocation();
+  const [favoriteTeamId, setFavoriteTeamId] = useState(() => getFavoriteTeam());
+  const selectedTeam = getTeamTheme(favoriteTeamId);
   useScrollReveal();
 
   useEffect(() => {
@@ -127,8 +131,8 @@ export function App() {
   }, [location.pathname, location.hash]);
 
   return (
-    <div className={`app ${theme.className}`}>
-      <Header />
+    <div className={`app ${theme.className} ${selectedTeam ? 'team-theme-active' : ''}`} style={createThemeCssVariables(selectedTeam)} data-favorite-team={selectedTeam?.id ?? 'default'}>
+      <Header favoriteTeamId={favoriteTeamId} onFavoriteTeamChange={setFavoriteTeamId} />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -147,7 +151,7 @@ export function App() {
   );
 }
 
-function Header() {
+function Header({ favoriteTeamId, onFavoriteTeamChange }: { favoriteTeamId: string | null; onFavoriteTeamChange: (teamId: string | null) => void }) {
   const { count } = useCart();
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState('');
@@ -185,6 +189,7 @@ function Header() {
             </div>
           )}
         </form>
+        <FavoriteTeamSelector favoriteTeamId={favoriteTeamId} onFavoriteTeamChange={onFavoriteTeamChange} />
         <Link className="icon-link" to="/brands" aria-label="Account"><UserRound size={21} /></Link>
         <Link className="cart-link" to="/cart" aria-label={`Cart with ${count} items`}><ShoppingBag size={21} /><span>{count}</span></Link>
         <button className="mobile-menu-button" onClick={() => setOpen(true)} aria-label="Open navigation"><Menu /></button>
@@ -197,6 +202,7 @@ function Header() {
             <form className="drawer-search" onSubmit={submit}>
               <Search size={18} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search" />
             </form>
+            <FavoriteTeamSelector favoriteTeamId={favoriteTeamId} onFavoriteTeamChange={onFavoriteTeamChange} compact />
             {(theme.id === 'penguin-classic' ? classicNavItems : navItems).map((item) => (
               <div className="drawer-nav-group" key={`${item.label}-${item.href}`}>
                 <NavLink to={item.href} onClick={() => setOpen(false)}>{item.label}</NavLink>
@@ -207,6 +213,44 @@ function Header() {
         </div>
       )}
     </>
+  );
+}
+
+function FavoriteTeamSelector({ favoriteTeamId, onFavoriteTeamChange, compact = false }: { favoriteTeamId: string | null; onFavoriteTeamChange: (teamId: string | null) => void; compact?: boolean }) {
+  const selectedTeam = getTeamTheme(favoriteTeamId);
+
+  function updateFavoriteTeam(teamId: string) {
+    if (!teamId) {
+      clearFavoriteTeam();
+      onFavoriteTeamChange(null);
+      analytics.track('favorite_team_reset', { theme: theme.id });
+      return;
+    }
+
+    const nextTeam = getTeamTheme(teamId);
+    if (!nextTeam) return;
+    setFavoriteTeam(nextTeam.id);
+    onFavoriteTeamChange(nextTeam.id);
+    analytics.track('favorite_team_select', { team: nextTeam.abbreviation, theme: theme.id });
+  }
+
+  return (
+    <label className={`team-selector ${compact ? 'compact' : ''}`}>
+      <span>Favorite NHL Team</span>
+      <div className="team-select-control">
+        <select value={selectedTeam?.id ?? ''} onChange={(event) => updateFavoriteTeam(event.target.value)} aria-label="Favorite NHL Team">
+          <option value="">Penguinscape Default</option>
+          {nhlTeams.map((team) => (
+            <option value={team.id} key={team.id}>{team.name} ({team.abbreviation})</option>
+          ))}
+        </select>
+        <div className="team-swatches" aria-hidden="true">
+          {(selectedTeam ? [selectedTeam.primary, selectedTeam.secondary, selectedTeam.accent] : ['#111111', '#f2c500', '#ffffff']).map((color) => (
+            <span style={{ background: color }} key={color} />
+          ))}
+        </div>
+      </div>
+    </label>
   );
 }
 

@@ -8,7 +8,9 @@ type EventName =
   | 'remove_from_cart'
   | 'view_cart'
   | 'begin_checkout'
-  | 'contact_form_submit';
+  | 'contact_form_submit'
+  | 'favorite_team_select'
+  | 'favorite_team_reset';
 
 export const analytics = {
   track(event: EventName, payload: Record<string, unknown> = {}) {
