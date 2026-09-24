@@ -18,14 +18,6 @@ const defaultTheme = {
   accent: '#ffffff'
 };
 
-function escapeXml(value) {
-  return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('"', '&quot;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;');
-}
-
 function readTeams(source) {
   const teamRegex = /\{\s*id: '([^']+)'.*?name: '([^']+)'.*?abbreviation: '([^']+)'.*?primary: '([^']+)'.*?secondary: '([^']+)'.*?accent: '([^']+)'/gs;
   return Array.from(source.matchAll(teamRegex), ([, id, name, abbreviation, primary, secondary, accent]) => ({
@@ -38,65 +30,112 @@ function readTeams(source) {
   }));
 }
 
-function overlaySvg(team) {
-  const primary = escapeXml(team.primary);
-  const secondary = escapeXml(team.secondary);
-  const accent = escapeXml(team.accent);
-  const label = escapeXml(team.abbreviation);
-
-  return Buffer.from(`
-    <svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}">
-      <defs>
-        <linearGradient id="team-wash" x1="0%" y1="10%" x2="100%" y2="86%">
-          <stop offset="0%" stop-color="${primary}" stop-opacity="0.34"/>
-          <stop offset="50%" stop-color="${secondary}" stop-opacity="0.26"/>
-          <stop offset="100%" stop-color="${accent}" stop-opacity="0.18"/>
-        </linearGradient>
-        <linearGradient id="ice-scrim" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.42"/>
-          <stop offset="42%" stop-color="#ffffff" stop-opacity="0.18"/>
-          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-        </linearGradient>
-        <radialGradient id="corner-glow" cx="86%" cy="24%" r="64%">
-          <stop offset="0%" stop-color="${secondary}" stop-opacity="0.36"/>
-          <stop offset="100%" stop-color="${primary}" stop-opacity="0"/>
-        </radialGradient>
-        <pattern id="ice-grid" width="116" height="116" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
-          <path d="M0 58H116 M58 0V116" stroke="${accent}" stroke-width="2" stroke-opacity="0.13"/>
-        </pattern>
-      </defs>
-      <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#team-wash)"/>
-      <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#corner-glow)"/>
-      <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#ice-grid)" opacity="0.35"/>
-      <path d="M1090-120c216 94 383 266 502 516 84 178 126 356 126 534l-360 112c25-228-11-432-108-612-86-160-214-286-382-378z" fill="${primary}" opacity="0.44"/>
-      <path d="M1296-34c152 87 268 216 346 386 53 115 81 233 85 354" fill="none" stroke="${secondary}" stroke-width="54" stroke-linecap="round" opacity="0.62"/>
-      <path d="M116 790c196-69 380-93 552-72 134 17 264 54 390 113" fill="none" stroke="${primary}" stroke-width="66" stroke-linecap="round" opacity="0.34"/>
-      <path d="M90 874c184-56 356-68 516-36" fill="none" stroke="${secondary}" stroke-width="24" stroke-linecap="round" opacity="0.72"/>
-      <circle cx="486" cy="810" r="146" fill="none" stroke="${accent}" stroke-width="8" opacity="0.18"/>
-      <circle cx="486" cy="810" r="54" fill="none" stroke="${secondary}" stroke-width="10" opacity="0.22"/>
-      <g opacity="0.12" fill="${accent}" font-family="Arial, Helvetica, sans-serif" font-size="124" font-weight="800" letter-spacing="8">
-        <text x="111" y="209">${label}</text>
-      </g>
-      <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#ice-scrim)"/>
-    </svg>
-  `);
+function hexToRgb(hex) {
+  const clean = hex.replace('#', '');
+  return {
+    r: Number.parseInt(clean.slice(0, 2), 16),
+    g: Number.parseInt(clean.slice(2, 4), 16),
+    b: Number.parseInt(clean.slice(4, 6), 16)
+  };
 }
 
-async function writeHero(team) {
-  await sharp(HERO_SOURCE)
-    .resize(WIDTH, HEIGHT, { fit: 'cover', position: 'center' })
-    .modulate({ brightness: 0.98, saturation: 0.72 })
-    .composite([
-      { input: overlaySvg(team), blend: 'over' }
-    ])
-    .webp({ quality: 84, effort: 5 })
+function mixChannel(source, target, strength) {
+  return Math.round(source * (1 - strength) + target * strength);
+}
+
+function tintPixel(data, offset, color, strength, lightBoost = 0) {
+  const r = data[offset];
+  const g = data[offset + 1];
+  const b = data[offset + 2];
+  const luma = (r * 0.2126 + g * 0.7152 + b * 0.0722) / 255;
+  const shade = Math.max(0.24, Math.min(1.28, luma + lightBoost));
+
+  data[offset] = mixChannel(r, Math.min(255, color.r * shade), strength);
+  data[offset + 1] = mixChannel(g, Math.min(255, color.g * shade), strength);
+  data[offset + 2] = mixChannel(b, Math.min(255, color.b * shade), strength);
+}
+
+function pointInPolygon(x, y, points) {
+  let inside = false;
+  for (let i = 0, j = points.length - 1; i < points.length; j = i, i += 1) {
+    const xi = points[i][0];
+    const yi = points[i][1];
+    const xj = points[j][0];
+    const yj = points[j][1];
+    const intersects = yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
+    if (intersects) inside = !inside;
+  }
+  return inside;
+}
+
+function isInUniformZone(x, y) {
+  const torso = pointInPolygon(x, y, [[1302, 96], [1488, 76], [1608, 214], [1534, 368], [1340, 354], [1228, 218]]);
+  const leadArm = pointInPolygon(x, y, [[1060, 238], [1310, 220], [1410, 326], [1160, 392]]);
+  const backArm = pointInPolygon(x, y, [[1518, 130], [1660, 164], [1628, 326], [1538, 286]]);
+  const leftLeg = pointInPolygon(x, y, [[1310, 380], [1484, 430], [1432, 642], [1212, 560]]);
+  const rightLeg = pointInPolygon(x, y, [[1505, 360], [1718, 428], [1668, 648], [1450, 535]]);
+  const helmet = ((x - 1414) / 86) ** 2 + ((y - 80) / 70) ** 2 < 1;
+  const glove = ((x - 1215) / 82) ** 2 + ((y - 330) / 72) ** 2 < 1;
+  return torso || leadArm || backArm || leftLeg || rightLeg || helmet || glove;
+}
+
+function isOriginalGold(r, g, b) {
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  return r > 118 && g > 78 && b < 96 && max - min > 38 && r >= g * 0.82;
+}
+
+function isOriginalDarkUniform(r, g, b) {
+  const luma = r * 0.2126 + g * 0.7152 + b * 0.0722;
+  const channelSpread = Math.max(r, g, b) - Math.min(r, g, b);
+  return luma < 116 && channelSpread < 82;
+}
+
+function isUniformWhite(r, g, b) {
+  const luma = r * 0.2126 + g * 0.7152 + b * 0.0722;
+  return luma > 160 && Math.max(r, g, b) - Math.min(r, g, b) < 54;
+}
+
+async function createUniformVariant(team, baseBuffer) {
+  const primary = hexToRgb(team.primary);
+  const secondary = hexToRgb(team.secondary);
+  const accent = hexToRgb(team.accent);
+  const image = Buffer.from(baseBuffer);
+
+  for (let y = 0; y < HEIGHT; y += 1) {
+    for (let x = 0; x < WIDTH; x += 1) {
+      if (!isInUniformZone(x, y)) continue;
+      const offset = (y * WIDTH + x) * 4;
+      const r = image[offset];
+      const g = image[offset + 1];
+      const b = image[offset + 2];
+
+      if (isOriginalGold(r, g, b)) {
+        tintPixel(image, offset, secondary, 0.94, 0.14);
+      } else if (isOriginalDarkUniform(r, g, b)) {
+        tintPixel(image, offset, primary, 0.84, 0.05);
+      } else if (isUniformWhite(r, g, b)) {
+        tintPixel(image, offset, accent, 0.38, 0.04);
+      }
+    }
+  }
+
+  await sharp(image, { raw: { width: WIDTH, height: HEIGHT, channels: 4 } })
+    .webp({ quality: 86, effort: 5 })
     .toFile(path.join(OUTPUT_DIR, `${team.id}.webp`));
 }
 
 const teamSource = await fs.readFile(TEAM_SOURCE, 'utf8');
 const teams = [defaultTheme, ...readTeams(teamSource)];
+const baseBuffer = await sharp(HERO_SOURCE)
+  .resize(WIDTH, HEIGHT, { fit: 'cover', position: 'center' })
+  .ensureAlpha()
+  .raw()
+  .toBuffer();
 
 await fs.mkdir(OUTPUT_DIR, { recursive: true });
-await Promise.all(teams.map(writeHero));
+for (const team of teams) {
+  await createUniformVariant(team, baseBuffer);
+}
 
-console.log(`Generated ${teams.length} team hero images in ${path.relative(ROOT, OUTPUT_DIR)}`);
+console.log(`Generated ${teams.length} jersey-recolored hero images in ${path.relative(ROOT, OUTPUT_DIR)}`);
