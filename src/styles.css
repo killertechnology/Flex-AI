@@ -799,9 +799,13 @@ footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; fo
 }
 
 @media (max-width: 1180px) {
-  .site-header { grid-template-columns: auto 1fr auto auto auto; }
+  .site-header { grid-template-columns: auto minmax(170px, 1fr) auto auto auto; }
   .desktop-nav { display: none; }
-  .site-header > .team-selector { display: none; }
+  .site-header > .team-selector {
+    display: grid;
+    max-width: 280px;
+    justify-self: end;
+  }
   .mobile-menu-button { display: grid; }
   .product-grid.compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .category-strip { grid-template-columns: repeat(7, 210px); }
@@ -812,6 +816,13 @@ footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; fo
 @media (max-width: 820px) {
   .site-header { grid-template-columns: 1fr auto auto; }
   .search-box, .icon-link { display: none; }
+  .site-header > .team-selector {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: none;
+    width: 100%;
+    justify-self: stretch;
+  }
   .brand { min-width: 0; }
   .brand small { display: none; }
   .hero { min-height: 620px; align-items: end; }
