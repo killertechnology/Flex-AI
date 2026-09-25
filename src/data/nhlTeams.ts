@@ -55,3 +55,43 @@ export function getTeamTheme(teamId: string | null | undefined) {
   if (!teamId) return undefined;
   return nhlTeams.find((team) => team.id === teamId.toLowerCase());
 }
+
+export const teamHeroSlogans: Record<string, string> = {
+  ana: 'Fly fast, finish louder.',
+  bos: 'Own the corners. Rule the rink.',
+  buf: 'Charge the blue line with bite.',
+  cgy: 'Light the ice and skate through fire.',
+  car: 'Bring the storm to every shift.',
+  chi: 'Tradition sharpened for today.',
+  col: 'Turn every rush into an avalanche.',
+  cbj: 'Stand tall. Fire from the blue.',
+  dal: 'Skate under the lights. Shine all night.',
+  det: 'Wing the puck. Drive the play.',
+  edm: 'Fuel the rush. Burn the ice.',
+  fla: 'Hunt the puck. Strike with speed.',
+  lak: 'Command the ice like royalty.',
+  min: 'Go wild from puck drop to horn.',
+  mtl: 'Classic speed. Montreal heart.',
+  nsh: 'Bare your teeth and own the crease.',
+  njd: 'Raise the tempo. Bring the heat.',
+  nyi: 'Ride the island edge all game.',
+  nyr: 'Broadway speed, playoff bite.',
+  ott: 'Defend the crest. Attack the night.',
+  phi: 'Bring the grit. Take the ice.',
+  pit: 'Glide sharp. Strike colder.',
+  sjs: 'Circle fast. Attack from deep.',
+  sea: 'Rise from the deep and flood the rink.',
+  stl: 'Play the note that shakes the boards.',
+  tbl: 'Flash through the zone like lightning.',
+  tor: 'Leafs colors, cold-blooded finish.',
+  uta: 'Carve a new trail across the ice.',
+  van: 'Skate west. Strike first.',
+  vgk: 'Armor up and own the night.',
+  wsh: 'Capital speed with a heavy shot.',
+  wpg: 'Jet through traffic and take flight.'
+};
+
+export function getTeamHeroSlogan(teamId: string | null | undefined) {
+  if (!teamId) return undefined;
+  return teamHeroSlogans[teamId.toLowerCase()];
+}

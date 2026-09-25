@@ -8,7 +8,7 @@ import { clearFavoriteTeam, createThemeCssVariables, getFavoriteTeam, setFavorit
 import { normalize, productRepository } from './commerce/ProductRepository';
 import { useCart } from './commerce/CartContext';
 import type { Product, Variant } from './commerce/types';
-import { getTeamTheme, nhlTeams } from './data/nhlTeams';
+import { getTeamHeroSlogan, getTeamTheme, nhlTeams } from './data/nhlTeams';
 import { getActiveTheme } from './themes/themes';
 
 const theme = getActiveTheme();
@@ -286,13 +286,14 @@ function HomePage({ selectedTeamId }: { selectedTeamId?: string }) {
   const under75 = [...allProducts].filter((product) => product.price < 75).sort((a, b) => a.price - b.price).slice(0, 8);
   const sale = allProducts.filter((product) => product.sale).slice(0, 4);
   const heroImage = assetUrl(selectedTeamId ? `/images/team-heroes/${selectedTeamId}.webp` : theme.heroImage);
+  const heroTitle = getTeamHeroSlogan(selectedTeamId) ?? theme.heroTitle;
 
   return (
     <>
       <section className="hero" style={{ backgroundImage: `linear-gradient(90deg, var(--hero-scrim), transparent), url(${heroImage})` }}>
         <div className="hero-copy">
           <p>{theme.heroKicker}</p>
-          <h1>{theme.heroTitle}</h1>
+          <h1>{heroTitle}</h1>
           <span>{theme.tagline}</span>
           <p>{theme.heroBody}</p>
           <div className="hero-actions">
