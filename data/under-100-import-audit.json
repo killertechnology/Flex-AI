@@ -1,0 +1,452 @@
+[
+  {
+    "id": "prod_value_001",
+    "title": "Inglasco Official Game Hockey Puck",
+    "slug": "inglasco-official-game-hockey-puck",
+    "price": 2.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/inglasco-official-game-hockey-puck"
+  },
+  {
+    "id": "prod_value_002",
+    "title": "SFS Hockey Skate Lace Tightening Tool",
+    "slug": "lace-tightener-sidelines-2857",
+    "price": 2.99,
+    "images": 2,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/lace-tightener-sidelines-2857"
+  },
+  {
+    "id": "prod_value_003",
+    "title": "Knapper AK Pro Fluid Hockey Ball",
+    "slug": "knapper-ak-pro-fluid-hockey-ball",
+    "price": 3.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/knapper-ak-pro-fluid-hockey-ball"
+  },
+  {
+    "id": "prod_value_004",
+    "title": "Inglasco Colored Hockey Puck - 6oz",
+    "slug": "inglasco-coloured-hockey-puck-6oz",
+    "price": 3.99,
+    "images": 3,
+    "variants": 3,
+    "sourceUrl": "https://www.thehockeyshop.com/products/inglasco-coloured-hockey-puck-6oz"
+  },
+  {
+    "id": "prod_value_005",
+    "title": "Lowry Sports Pro-Grade Hockey Sock Tape - Large Roll",
+    "slug": "clear-hockey-sock-tape-large",
+    "price": 4.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/clear-hockey-sock-tape-large"
+  },
+  {
+    "id": "prod_value_006",
+    "title": "Lowry Sports Pro-Grade Colored Hockey Sock Tape",
+    "slug": "colored-sock-tape",
+    "price": 4.99,
+    "images": 6,
+    "variants": 14,
+    "sourceUrl": "https://www.thehockeyshop.com/products/colored-sock-tape"
+  },
+  {
+    "id": "prod_value_007",
+    "title": "Blue Sports Swedish Stickhandling Ball",
+    "slug": "swedish-stickhandling-ball",
+    "price": 4.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/swedish-stickhandling-ball"
+  },
+  {
+    "id": "prod_value_008",
+    "title": "Lowry Sports Colored Pro Wrap",
+    "slug": "tape-trainer-foam-coloured",
+    "price": 4.99,
+    "images": 6,
+    "variants": 10,
+    "sourceUrl": "https://www.thehockeyshop.com/products/tape-trainer-foam-coloured"
+  },
+  {
+    "id": "prod_value_009",
+    "title": "The Hockey Shop 1L Water Bottle",
+    "slug": "the-hockey-shop-water-bottle",
+    "price": 4.99,
+    "images": 2,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/the-hockey-shop-water-bottle"
+  },
+  {
+    "id": "prod_value_010",
+    "title": "Inglasco Lightweight Hockey Puck - 4oz",
+    "slug": "inglasco-lightweight-hockey-puck-4oz",
+    "price": 4.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/inglasco-lightweight-hockey-puck-4oz"
+  },
+  {
+    "id": "prod_value_011",
+    "title": "Lowry Sports Pro-Grade White Hockey Stick Tape - Skinny White",
+    "slug": "tape-white-skinny-12958",
+    "price": 5.49,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/tape-white-skinny-12958"
+  },
+  {
+    "id": "prod_value_012",
+    "title": "Source for Sports Waxed Hockey Skate Laces - White / Black",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-white-black",
+    "price": 5.99,
+    "images": 1,
+    "variants": 7,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-white-black"
+  },
+  {
+    "id": "prod_value_013",
+    "title": "Secret Mini Hockey Ball",
+    "slug": "secret-mini-hockey-ball",
+    "price": 5.99,
+    "images": 2,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/secret-mini-hockey-ball"
+  },
+  {
+    "id": "prod_value_014",
+    "title": "Lowry Sports Pro-Grade Colored Hockey Stick Tape",
+    "slug": "colored-tape",
+    "price": 5.99,
+    "images": 6,
+    "variants": 18,
+    "sourceUrl": "https://www.thehockeyshop.com/products/colored-tape"
+  },
+  {
+    "id": "prod_value_015",
+    "title": "Lowry Sports Pro-Grade Colored Specialty Hockey Stick Tape",
+    "slug": "lowry-sports-pro-grade-colored-specialty-hockey-stick-tape",
+    "price": 5.99,
+    "images": 6,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/lowry-sports-pro-grade-colored-specialty-hockey-stick-tape"
+  },
+  {
+    "id": "prod_value_016",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Black / White",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-black-white",
+    "price": 5.99,
+    "images": 1,
+    "variants": 7,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-black-white"
+  },
+  {
+    "id": "prod_value_017",
+    "title": "Source for Sports Molded Tip Hockey Skate Laces - White / Black",
+    "slug": "source-for-sports-molded-tip-hockey-skate-laces-white-black",
+    "price": 5.99,
+    "images": 1,
+    "variants": 7,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-molded-tip-hockey-skate-laces-white-black"
+  },
+  {
+    "id": "prod_value_018",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Yellow / Black",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-yellow-black",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-yellow-black"
+  },
+  {
+    "id": "prod_value_019",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Red / Black",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-red-black",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-red-black"
+  },
+  {
+    "id": "prod_value_020",
+    "title": "The Hockey Shop Straw Water Bottle - Small",
+    "slug": "the-hockey-shop-straw-water-bottle-small",
+    "price": 5.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/the-hockey-shop-straw-water-bottle-small"
+  },
+  {
+    "id": "prod_value_021",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Neon Pink / Navy",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-neon-pink-navy",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-neon-pink-navy"
+  },
+  {
+    "id": "prod_value_022",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Royal / White",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-royal-white",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-royal-white"
+  },
+  {
+    "id": "prod_value_023",
+    "title": "Source for Sports Molded Tip Hockey Skate Laces - Black / White",
+    "slug": "source-for-sports-molded-tip-hockey-skate-laces-black-white",
+    "price": 5.99,
+    "images": 1,
+    "variants": 7,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-molded-tip-hockey-skate-laces-black-white"
+  },
+  {
+    "id": "prod_value_024",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Electric Blue / Navy",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-electric-blue-navy",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-electric-blue-navy"
+  },
+  {
+    "id": "prod_value_025",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Lime Green / White",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-lime-green-white",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-lime-green-white"
+  },
+  {
+    "id": "prod_value_026",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Purple / White",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-purple-white",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-purple-white"
+  },
+  {
+    "id": "prod_value_027",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Orange / Black",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-orange-black",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-orange-black"
+  },
+  {
+    "id": "prod_value_028",
+    "title": "Source for Sports Waxed Hockey Skate Laces - Silver Grey / Black",
+    "slug": "source-for-sports-waxed-hockey-skate-laces-silver-grey-black",
+    "price": 5.99,
+    "images": 1,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-waxed-hockey-skate-laces-silver-grey-black"
+  },
+  {
+    "id": "prod_value_029",
+    "title": "Source for Sports Molded Tip Hockey Skate Laces - Referee White",
+    "slug": "source-for-sports-molded-tip-hockey-skate-laces-referee-white",
+    "price": 5.99,
+    "images": 1,
+    "variants": 4,
+    "sourceUrl": "https://www.thehockeyshop.com/products/source-for-sports-molded-tip-hockey-skate-laces-referee-white"
+  },
+  {
+    "id": "prod_value_030",
+    "title": "Inglasco Weighted Hockey Puck - 10oz",
+    "slug": "inglasco-weighted-hockey-puck-10oz",
+    "price": 5.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/inglasco-weighted-hockey-puck-10oz"
+  },
+  {
+    "id": "prod_value_031",
+    "title": "Bauer Helmet Quick Release Chin Strap - 2 Pieces",
+    "slug": "bauer-helmet-quick-release-chin-strap-2-pieces",
+    "price": 5.99,
+    "images": 3,
+    "variants": 2,
+    "sourceUrl": "https://www.thehockeyshop.com/products/bauer-helmet-quick-release-chin-strap-2-pieces"
+  },
+  {
+    "id": "prod_value_032",
+    "title": "Lowry Sports Grip Tape",
+    "slug": "lowrys-grip-tape",
+    "price": 6.49,
+    "images": 6,
+    "variants": 14,
+    "sourceUrl": "https://www.thehockeyshop.com/products/lowrys-grip-tape"
+  },
+  {
+    "id": "prod_value_033",
+    "title": "Lowry Sports Pro-Grade Black Hockey Stick Tape - Skinny",
+    "slug": "lowry-sports-pro-grade-black-hockey-stick-tape-skinny",
+    "price": 6.49,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/lowry-sports-pro-grade-black-hockey-stick-tape-skinny"
+  },
+  {
+    "id": "prod_value_034",
+    "title": "Lowry Sports Pro-Grade White Hockey Stick Tape - Large Roll",
+    "slug": "white-tape-large",
+    "price": 6.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/white-tape-large"
+  },
+  {
+    "id": "prod_value_035",
+    "title": "Mr. Zogs Original Sex Wax Hockey Stick Wax",
+    "slug": "wax-dr-zogs-sex-wax-3228",
+    "price": 6.99,
+    "images": 5,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/wax-dr-zogs-sex-wax-3228"
+  },
+  {
+    "id": "prod_value_036",
+    "title": "Zippy's Hockey Stick Wax",
+    "slug": "zippys-hockey-stick-wax",
+    "price": 6.99,
+    "images": 6,
+    "variants": 6,
+    "sourceUrl": "https://www.thehockeyshop.com/products/zippys-hockey-stick-wax"
+  },
+  {
+    "id": "prod_value_037",
+    "title": "Ice Wax Hockey Stick Wax",
+    "slug": "wax-ice-wax-3229",
+    "price": 6.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/wax-ice-wax-3229"
+  },
+  {
+    "id": "prod_value_038",
+    "title": "The Hockey Shop Pro Water Bottle - Black",
+    "slug": "hockey-shop-pro-water-bottle-black",
+    "price": 6.99,
+    "images": 2,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/hockey-shop-pro-water-bottle-black"
+  },
+  {
+    "id": "prod_value_039",
+    "title": "Nash Honing Stone - With Pouch",
+    "slug": "honing-stone-with-pouch",
+    "price": 6.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/honing-stone-with-pouch"
+  },
+  {
+    "id": "prod_value_040",
+    "title": "Lowry Sports Hospital Grade Trainers Tape",
+    "slug": "trainer-s-cloth-tape",
+    "price": 6.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/trainer-s-cloth-tape"
+  },
+  {
+    "id": "prod_value_041",
+    "title": "Lowry Sports Pro-Grade Black Hockey Stick Tape - Large Roll",
+    "slug": "black-tape-large",
+    "price": 7.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/black-tape-large"
+  },
+  {
+    "id": "prod_value_042",
+    "title": "TRUE Water Bottle",
+    "slug": "true-water-bottle",
+    "price": 7.99,
+    "images": 2,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/true-water-bottle"
+  },
+  {
+    "id": "prod_value_043",
+    "title": "Zippy's Mystery Hockey Stick Wax",
+    "slug": "zippys-mystery-hockey-stick-wax",
+    "price": 7.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/zippys-mystery-hockey-stick-wax"
+  },
+  {
+    "id": "prod_value_044",
+    "title": "Lowry Sports Senior Mouthguard",
+    "slug": "lowry-sports-senior-mouthguard",
+    "price": 7.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/lowry-sports-senior-mouthguard"
+  },
+  {
+    "id": "prod_value_045",
+    "title": "Howies Hockey Stick Wax",
+    "slug": "howies-hockey-stick-wax",
+    "price": 8.99,
+    "images": 3,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/howies-hockey-stick-wax"
+  },
+  {
+    "id": "prod_value_046",
+    "title": "Bauer Straw Top Water Bottle",
+    "slug": "bauer-straw-top-water-bottle",
+    "price": 8.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/bauer-straw-top-water-bottle"
+  },
+  {
+    "id": "prod_value_047",
+    "title": "Bauer Valve Top Water Bottle",
+    "slug": "bauer-valve-top-water-bottle",
+    "price": 8.99,
+    "images": 1,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/bauer-valve-top-water-bottle"
+  },
+  {
+    "id": "prod_value_048",
+    "title": "Bauer SLIVVVER Roller Hockey Puck",
+    "slug": "bauer-slivvver-roller-hockey-puck",
+    "price": 8.99,
+    "images": 2,
+    "variants": 2,
+    "sourceUrl": "https://www.thehockeyshop.com/products/bauer-slivvver-roller-hockey-puck"
+  },
+  {
+    "id": "prod_value_049",
+    "title": "Howies Hockey Tacky Wax",
+    "slug": "howies-hockey-tacky-stick-wax",
+    "price": 9.99,
+    "images": 4,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/howies-hockey-tacky-stick-wax"
+  },
+  {
+    "id": "prod_value_050",
+    "title": "Howies Hockey Scissors",
+    "slug": "howies-hockey-scissors",
+    "price": 9.99,
+    "images": 2,
+    "variants": 1,
+    "sourceUrl": "https://www.thehockeyshop.com/products/howies-hockey-scissors"
+  }
+]

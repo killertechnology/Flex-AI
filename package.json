@@ -1,0 +1,37 @@
+{
+  "name": "flex-ai-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "dev:premium": "VITE_THEME=premium-ice vite --host 0.0.0.0 --port 8088",
+    "dev:pro": "VITE_THEME=pro-shop vite --host 0.0.0.0 --port 8089",
+    "dev:modern": "VITE_THEME=penguin-modern vite --host 0.0.0.0 --port 8090",
+    "dev:classic": "VITE_THEME=penguin-classic vite --host 0.0.0.0 --port 8091",
+    "dev:all": "concurrently -n premium,pro,modern,classic -c cyan,red,green,yellow \"npm run dev:premium\" \"npm run dev:pro\" \"npm run dev:modern\" \"npm run dev:classic\"",
+    "generate:assets": "node scripts/generate-assets.mjs",
+    "generate:team-heroes": "node scripts/generate-team-heroes.mjs",
+    "download:product-images": "node scripts/download-product-images.mjs",
+    "verify": "node scripts/verify.mjs",
+    "build": "tsc -b && vite build",
+    "build:all": "npm run verify && npm run build",
+    "screenshots": "node scripts/capture-screenshots.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^8.2.2",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "sharp": "latest",
+    "vite": "^5.4.21"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright": "latest",
+    "typescript": "latest"
+  }
+}

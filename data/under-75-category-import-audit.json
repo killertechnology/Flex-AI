@@ -1,0 +1,122 @@
+{
+  "added": [
+    {
+      "id": "prod_budget_manual_001",
+      "title": "Bauer X-LS Youth Hockey Skates",
+      "category": "Skates",
+      "price": 51.98,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/hockey-skates-youth"
+    },
+    {
+      "id": "prod_budget_manual_002",
+      "title": "Bauer X-LP Youth Hockey Skates",
+      "category": "Skates",
+      "price": 59.98,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/hockey-skates-youth"
+    },
+    {
+      "id": "prod_budget_manual_003",
+      "title": "CCM Tacks AS550 Youth Hockey Skates",
+      "category": "Skates",
+      "price": 41.95,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/hockey-skates-youth"
+    },
+    {
+      "id": "prod_budget_manual_004",
+      "title": "Bauer Vapor Tyke Hockey Stick S20 - 10 Flex",
+      "category": "Sticks",
+      "price": 48.97,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/hockey-sticks-youth"
+    },
+    {
+      "id": "prod_budget_manual_005",
+      "title": "Bauer Vapor Youth Hockey Stick S20 - 20 Flex",
+      "category": "Sticks",
+      "price": 49.95,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/hockey-sticks-youth"
+    },
+    {
+      "id": "prod_budget_manual_006",
+      "title": "CCM Jetspeed 475 Junior Hockey Stick",
+      "category": "Sticks",
+      "price": 64.9,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/hockey-sticks-junior"
+    },
+    {
+      "id": "prod_budget_manual_007",
+      "title": "Bauer Pro Junior Goalie Neck Guard - 2021",
+      "category": "Goalie",
+      "price": 55.98,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/goalie-accessories"
+    },
+    {
+      "id": "prod_budget_manual_008",
+      "title": "Warrior Ritual X4 E+ Senior Goalie Neck Guard",
+      "category": "Goalie",
+      "price": 47.95,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/goalie-accessories"
+    },
+    {
+      "id": "prod_budget_manual_009",
+      "title": "CCM Axis XF Series Hardware Kit",
+      "category": "Goalie",
+      "price": 59.99,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/goalie-accessories"
+    },
+    {
+      "id": "prod_budget_manual_010",
+      "title": "CCM 1.9 Senior Goalie Jock",
+      "category": "Goalie",
+      "price": 55.98,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/goalie-accessories"
+    },
+    {
+      "id": "prod_budget_manual_011",
+      "title": "Vaughn 7000 Junior Goalie Neck Guard",
+      "category": "Protective",
+      "price": 64.99,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/goalie-accessories"
+    },
+    {
+      "id": "prod_budget_manual_012",
+      "title": "CCM 1.9 Junior Goalie Jock",
+      "category": "Protective",
+      "price": 39.98,
+      "sourceUrl": "https://www.thehockeyshop.com/collections/goalie-accessories"
+    }
+  ],
+  "counts": {
+    "Skates": {
+      "total": 40,
+      "under75": 3
+    },
+    "Sticks": {
+      "total": 20,
+      "under75": 3
+    },
+    "Protective": {
+      "total": 31,
+      "under75": 4
+    },
+    "Goalie": {
+      "total": 21,
+      "under75": 4
+    },
+    "Accessories": {
+      "total": 69,
+      "under75": 49
+    },
+    "Apparel": {
+      "total": 12,
+      "under75": 8
+    },
+    "Skate Services": {
+      "total": 7,
+      "under75": 7
+    },
+    "Training": {
+      "total": 8,
+      "under75": 8
+    }
+  }
+}
