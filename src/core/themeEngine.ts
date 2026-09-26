@@ -49,6 +49,7 @@ export function createThemeCssVariables(team?: TeamTheme): CSSProperties | undef
     '--button-text': team.buttonText,
     '--focus': team.accent,
     '--hero-scrim': 'color-mix(in srgb, var(--theme-background) 86%, transparent)',
+    '--hero-diffusion': 'rgba(128, 136, 142, .34)',
     '--shadow': '0 22px 70px color-mix(in srgb, var(--theme-background) 55%, #000000 45%)'
   } as CSSProperties;
 }

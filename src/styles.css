@@ -16,29 +16,30 @@ img { max-width: 100%; display: block; }
 .theme-premium {
   --bg: #f8fbfc; --surface: #ffffff; --surface-2: #edf5f7; --text: #182026; --muted: #687780;
   --border: #dce8ec; --accent: #397a91; --accent-2: #b9dbe5; --button-text: #ffffff; --focus: #397a91;
-  --hero-scrim: rgba(248, 251, 252, .94); --shadow: 0 18px 55px rgba(26, 48, 57, .12);
+  --hero-scrim: rgba(248, 251, 252, .94); --hero-diffusion: rgba(128, 136, 142, .31); --shadow: 0 18px 55px rgba(26, 48, 57, .12);
   letter-spacing: 0;
 }
 .theme-pro {
   --bg: #0e1116; --surface: #171c23; --surface-2: #222a33; --text: #f5f7f8; --muted: #aeb8c0;
   --border: #333e4a; --accent: #e03646; --accent-2: #46515e; --button-text: #ffffff; --focus: #ff5968;
-  --hero-scrim: rgba(14, 17, 22, .9); --shadow: 0 22px 70px rgba(0, 0, 0, .38);
+  --hero-scrim: rgba(14, 17, 22, .9); --hero-diffusion: rgba(128, 136, 142, .34); --shadow: 0 22px 70px rgba(0, 0, 0, .38);
   text-transform: none;
 }
 .theme-modern {
   --bg: #f6faf9; --surface: #ffffff; --surface-2: #eaf6f3; --text: #16242b; --muted: #5f7076;
   --border: #d4e7e4; --accent: #0f7f78; --accent-2: #f1c95d; --button-text: #ffffff; --focus: #0f7f78;
-  --hero-scrim: rgba(246, 250, 249, .92); --shadow: 0 18px 45px rgba(18, 72, 70, .13);
+  --hero-scrim: rgba(246, 250, 249, .92); --hero-diffusion: rgba(128, 136, 142, .31); --shadow: 0 18px 45px rgba(18, 72, 70, .13);
 }
 .theme-classic {
   --bg: #ffffff; --surface: #ffffff; --surface-2: #fff6cf; --text: #111111; --muted: #4d4d4d;
   --border: #eeeeee; --accent: #f2c500; --accent-2: #111111; --button-text: #111111; --focus: #f2c500;
-  --hero-scrim: rgba(255, 255, 255, .86); --shadow: 0 16px 36px rgba(17, 17, 17, .14);
+  --hero-scrim: rgba(255, 255, 255, .86); --hero-diffusion: rgba(128, 136, 142, .28); --shadow: 0 16px 36px rgba(17, 17, 17, .14);
 }
 
 .app { min-height: 100vh; background: var(--bg); color: var(--text); transition: background-color .25s ease, color .25s ease; }
 .app.team-theme-active {
   --surface-2: var(--theme-background-alt);
+  --hero-diffusion: rgba(128, 136, 142, .34);
 }
 .app.team-theme-active .site-header,
 .app.team-theme-active .nav-dropdown,
@@ -390,6 +391,28 @@ img { max-width: 100%; display: block; }
 .hero span { display: block; color: var(--muted); font-weight: 800; margin-bottom: 18px; }
 .hero p { color: var(--muted); font-size: 18px; line-height: 1.6; max-width: 580px; }
 .hero-actions, .pdp-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.sport-focus-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.sport-focus-selector button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+}
+.sport-focus-selector button.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--button-text);
+}
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border-radius: 6px; font-weight: 900; border: 1px solid var(--border); cursor: pointer; }
 .button.primary { background: var(--accent); color: var(--button-text); border-color: var(--accent); }
 .button.secondary { background: var(--surface); color: var(--text); }
@@ -630,9 +653,10 @@ select, .quantity input, .cart-line input { min-height: 42px; border: 1px solid 
 .filters label { display: grid; gap: 6px; color: var(--muted); font-weight: 800; font-size: 13px; }
 .filter-toggle { display: none; }
 
-.pdp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 520px); gap: clamp(24px, 5vw, 70px); padding: clamp(28px, 5vw, 70px) clamp(18px, 4vw, 56px); }
+.pdp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 520px); gap: clamp(24px, 5vw, 70px); padding: clamp(28px, 5vw, 70px) clamp(18px, 4vw, 56px); overflow-x: clip; }
+.gallery, .pdp-info { min-width: 0; }
 .main-image { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; object-fit: cover; box-shadow: var(--shadow); }
-.thumbs { display: flex; gap: 10px; margin-top: 12px; }
+.thumbs { display: flex; gap: 10px; margin-top: 12px; max-width: 100%; overflow-x: auto; padding-bottom: 4px; }
 .thumbs button { border: 1px solid var(--border); background: var(--surface); border-radius: 6px; padding: 0; cursor: pointer; overflow: hidden; width: 92px; height: 74px; }
 .thumbs img { width: 100%; height: 100%; object-fit: cover; }
 .pdp-info h1 { font-size: clamp(34px, 5vw, 64px); line-height: 1; letter-spacing: 0; }
@@ -826,6 +850,22 @@ footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; fo
   .brand { min-width: 0; }
   .brand small { display: none; }
   .hero { min-height: 620px; align-items: end; }
+  .hero[data-sport-focus="hockey"] {
+    background-position: 42% center;
+  }
+  .hero[data-sport-focus="goalie"],
+  .hero[data-sport-focus="figure-skating"] {
+    background-position: center center;
+  }
+  .sport-focus-selector {
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .sport-focus-selector button {
+    min-height: 44px;
+    padding: 0 13px;
+    font-size: 16px;
+  }
   .theme-classic .hero {
     min-height: auto;
     align-items: start;
@@ -865,6 +905,32 @@ footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; fo
   .filters-drawer .filters { display: grid; position: static; border: 0; padding: 0; }
   .filter-toggle { display: inline-flex; min-height: 42px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 6px; padding: 0 14px; }
   .collection-head { align-items: start; flex-wrap: wrap; }
+  .pdp {
+    gap: 22px;
+    overflow-x: hidden;
+  }
+  .gallery {
+    width: 100%;
+    max-width: 100%;
+  }
+  .main-image {
+    width: 100%;
+    height: min(62vh, 520px);
+    max-height: 520px;
+    object-fit: contain;
+    object-position: center;
+  }
+  .thumbs {
+    gap: 8px;
+    margin-top: 10px;
+    scroll-snap-type: x proximity;
+  }
+  .thumbs button {
+    flex: 0 0 78px;
+    width: 78px;
+    height: 62px;
+    scroll-snap-align: start;
+  }
   .message-grid, .cart-line { grid-template-columns: 1fr; }
   .cart-line img { width: 100%; }
   .signup form { flex-direction: column; }
@@ -895,6 +961,46 @@ footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; fo
     min-height: 38px;
     display: flex;
     align-items: center;
+  }
+}
+
+@media (max-width: 599px) {
+  .pdp {
+    padding: 18px 14px 36px;
+    gap: 18px;
+  }
+  .main-image {
+    height: min(46vh, 390px);
+    max-height: 390px;
+  }
+  .thumbs button {
+    flex-basis: 70px;
+    width: 70px;
+    height: 56px;
+  }
+  .hero[data-sport-focus="hockey"] {
+    background-position: 72% center !important;
+  }
+
+  .hero[data-sport-focus="goalie"],
+  .hero[data-sport-focus="figure-skating"] {
+    background-position: center center !important;
+  }
+
+  .sport-focus-selector {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .sport-focus-selector button {
+    min-height: 46px;
+    padding: 0 8px;
+    font-size: 15px;
+    line-height: 1.1;
+    border-radius: 8px;
   }
 }
 

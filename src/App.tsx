@@ -13,6 +13,34 @@ import { getActiveTheme } from './themes/themes';
 
 const theme = getActiveTheme();
 type NavEntry = { label: string; href: string; children?: { label: string; href: string; description?: string }[] };
+type SportFocus = 'hockey' | 'goalie' | 'figure-skating';
+const generatedCategoryTeamIds = new Set(nhlTeams.map((team) => team.id));
+const sportFocusCookieName = 'penguinSportFocus';
+const sportFocusOptions: { id: SportFocus; label: string; href: string }[] = [
+  { id: 'hockey', label: 'Hockey', href: '/collections/hockey' },
+  { id: 'goalie', label: 'Goalie', href: '/collections/goalie' },
+  { id: 'figure-skating', label: 'Figure Skating', href: '/collections/figure-skating' }
+];
+const sportHeroCopy: Record<SportFocus, { kicker: string; title: string; tagline: string; body: string }> = {
+  hockey: {
+    kicker: 'Built for game night',
+    title: 'Gear up. Hit the ice.',
+    tagline: 'Performance hockey equipment',
+    body: 'Shop skates, sticks, gloves, helmets, protective gear, and rink-ready accessories with a fit-first path built for hockey players.'
+  },
+  goalie: {
+    kicker: 'Own the crease',
+    title: 'Protect the net with confidence.',
+    tagline: 'Goalie pads • masks • gloves • chest protection',
+    body: 'Explore goalie gear with clear fit guidance, service support, and product paths shaped around coverage, mobility, rebound control, and comfort.'
+  },
+  'figure-skating': {
+    kicker: 'Edge, balance, and presentation',
+    title: 'Skate with precision and grace.',
+    tagline: 'Figure skates • boots • blades • guards',
+    body: 'Find figure skating boots, blades, guards, and essentials with a polished shopping flow for edge control, comfort, support, and performance.'
+  }
+};
 
 const navItems: NavEntry[] = [
   { label: 'HOCKEY', href: '/collections/hockey', children: [
@@ -82,6 +110,23 @@ const classicNavItems: NavEntry[] = [
   ] }
 ];
 const allProducts = productRepository.getAllProducts();
+
+function getCookieValue(name: string) {
+  if (typeof document === 'undefined') return '';
+  const match = document.cookie.split('; ').find((part) => part.startsWith(`${name}=`));
+  return match ? decodeURIComponent(match.split('=').slice(1).join('=')) : '';
+}
+
+function getSportFocus(): SportFocus {
+  const savedFocus = getCookieValue(sportFocusCookieName);
+  return sportFocusOptions.some((option) => option.id === savedFocus) ? savedFocus as SportFocus : 'hockey';
+}
+
+function setSportFocusCookie(focus: SportFocus) {
+  if (typeof document === 'undefined') return;
+  const maxAge = 60 * 60 * 24 * 180;
+  document.cookie = `${sportFocusCookieName}=${encodeURIComponent(focus)}; Max-Age=${maxAge}; Path=/; SameSite=Lax`;
+}
 
 function useScrollReveal() {
   useEffect(() => {
@@ -281,32 +326,42 @@ function DesktopNavItem({ item, activeMenu, setActiveMenu }: { item: NavEntry; a
 }
 
 function HomePage({ selectedTeamId }: { selectedTeamId?: string }) {
+  const [sportFocus, setSportFocus] = useState<SportFocus>(() => getSportFocus());
   const featured = allProducts.filter((product) => product.featured).slice(0, 4);
   const newArrivals = allProducts.filter((product) => product.newArrival).slice(0, 4);
   const under75 = [...allProducts].filter((product) => product.price < 75).sort((a, b) => a.price - b.price).slice(0, 8);
   const sale = allProducts.filter((product) => product.sale).slice(0, 4);
-  const heroImage = assetUrl(selectedTeamId ? `/images/team-heroes/${selectedTeamId}.webp` : theme.heroImage);
-  const heroTitle = getTeamHeroSlogan(selectedTeamId) ?? theme.heroTitle;
+  const heroImage = getSportHeroImage(selectedTeamId, sportFocus);
+  const heroCopy = getSportHeroCopy(selectedTeamId, sportFocus);
+
+  function updateSportFocus(nextFocus: SportFocus) {
+    setSportFocus(nextFocus);
+    setSportFocusCookie(nextFocus);
+    analytics.track('sport_focus_select', { focus: nextFocus, team: selectedTeamId ?? 'default', theme: theme.id });
+  }
 
   return (
     <>
-      <section className="hero" style={{ backgroundImage: `linear-gradient(90deg, var(--hero-scrim), transparent), url(${heroImage})` }}>
+      <section
+        className="hero"
+        data-sport-focus={sportFocus}
+        data-team-id={selectedTeamId ?? 'default'}
+        key={`${selectedTeamId ?? 'default'}-${sportFocus}`}
+        style={{ backgroundImage: `linear-gradient(90deg, var(--hero-scrim), transparent), linear-gradient(0deg, var(--hero-diffusion), var(--hero-diffusion)), url(${heroImage})` }}
+      >
         <div className="hero-copy">
-          <p>{theme.heroKicker}</p>
-          <h1>{heroTitle}</h1>
-          <span>{theme.tagline}</span>
-          <p>{theme.heroBody}</p>
-          <div className="hero-actions">
-            <Link className="button primary" to="/collections/hockey">{theme.primaryCta}</Link>
-            <Link className="button secondary" to="/collections/figure-skating">{theme.secondaryCta}</Link>
-          </div>
+          <p>{heroCopy.kicker}</p>
+          <h1>{heroCopy.title}</h1>
+          <span>{heroCopy.tagline}</span>
+          <p>{heroCopy.body}</p>
+          <SportFocusSelector sportFocus={sportFocus} onSportFocusChange={updateSportFocus} />
         </div>
         {theme.id === 'penguin-classic' && (
           <img className="classic-hero-player" src={heroImage} alt="" aria-hidden="true" />
         )}
       </section>
       <ScrollStory />
-      <CategoryNavigation />
+      <CategoryNavigation selectedTeamId={selectedTeamId} />
       <ProductRail title="Featured Products" products={featured} />
       <ProductRail title="Under $75 Picks" products={under75} href="/collections/under-75?sort=price-asc" />
       <ProductRail title="New Arrivals" products={newArrivals} />
@@ -316,6 +371,47 @@ function HomePage({ selectedTeamId }: { selectedTeamId?: string }) {
       <StoreBand />
       <SignupBand />
     </>
+  );
+}
+
+function getSportHeroCopy(selectedTeamId: string | undefined, sportFocus: SportFocus) {
+  if (sportFocus === 'hockey') {
+    return {
+      ...sportHeroCopy.hockey,
+      title: getTeamHeroSlogan(selectedTeamId) ?? sportHeroCopy.hockey.title
+    };
+  }
+
+  return sportHeroCopy[sportFocus];
+}
+
+function getSportHeroImage(selectedTeamId: string | undefined, sportFocus: SportFocus) {
+  if (sportFocus === 'hockey') {
+    return assetUrl(selectedTeamId ? `/images/team-heroes/${selectedTeamId}.webp` : theme.heroImage);
+  }
+
+  if (selectedTeamId && generatedCategoryTeamIds.has(selectedTeamId)) {
+    return assetUrl(`/images/team-categories/${selectedTeamId}/${sportFocus}.webp`);
+  }
+
+  return assetUrl(sportFocus === 'goalie' ? '/images/categories/goalie.webp' : '/images/categories/figure-skating.webp');
+}
+
+function SportFocusSelector({ sportFocus, onSportFocusChange }: { sportFocus: SportFocus; onSportFocusChange: (focus: SportFocus) => void }) {
+  return (
+    <div className="sport-focus-selector" role="group" aria-label="Choose shopping focus">
+      {sportFocusOptions.map((option) => (
+        <button
+          className={sportFocus === option.id ? 'selected' : ''}
+          type="button"
+          aria-pressed={sportFocus === option.id}
+          onClick={() => onSportFocusChange(option.id)}
+          key={option.id}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
   );
 }
 
@@ -360,15 +456,22 @@ function ScrollStory() {
   );
 }
 
-function CategoryNavigation() {
+function getCategoryImage(selectedTeamId: string | undefined, slug: string, fallbackPath: string) {
+  if (selectedTeamId && generatedCategoryTeamIds.has(selectedTeamId)) {
+    return assetUrl(`/images/team-categories/${selectedTeamId}/${slug}.webp`);
+  }
+  return assetUrl(fallbackPath);
+}
+
+function CategoryNavigation({ selectedTeamId }: { selectedTeamId?: string }) {
   const categories = [
-    ['Hockey', '/collections/hockey', theme.id === 'penguin-classic' ? assetUrl('/images/categories/hockey-action.webp') : assetUrl('/images/categories/hockey.webp')],
-    ['Figure Skating', '/collections/figure-skating', assetUrl('/images/categories/figure-skating.webp')],
-    ['Goalie', '/collections/goalie', assetUrl('/images/categories/goalie.webp')],
-    ['Skates', '/collections/skates', assetUrl('/images/categories/skates.webp')],
-    ['Accessories', '/collections/accessories', assetUrl('/images/categories/accessories.webp')],
-    ['Apparel', '/collections/apparel', assetUrl('/images/categories/apparel.webp')],
-    ['Skate Services', '/services', assetUrl('/images/categories/skate-services.webp')]
+    ['Hockey', '/collections/hockey', getCategoryImage(selectedTeamId, 'hockey', theme.id === 'penguin-classic' ? '/images/categories/hockey-action.webp' : '/images/categories/hockey.webp')],
+    ['Figure Skating', '/collections/figure-skating', getCategoryImage(selectedTeamId, 'figure-skating', '/images/categories/figure-skating.webp')],
+    ['Goalie', '/collections/goalie', getCategoryImage(selectedTeamId, 'goalie', '/images/categories/goalie.webp')],
+    ['Skates', '/collections/skates', getCategoryImage(selectedTeamId, 'skates', '/images/categories/skates.webp')],
+    ['Accessories', '/collections/accessories', getCategoryImage(selectedTeamId, 'accessories', '/images/categories/accessories.webp')],
+    ['Apparel', '/collections/apparel', getCategoryImage(selectedTeamId, 'apparel', '/images/categories/apparel.webp')],
+    ['Skate Services', '/services', getCategoryImage(selectedTeamId, 'skate-services', '/images/categories/skate-services.webp')]
   ];
   return (
     <section className="category-strip" aria-label="Primary category navigation">

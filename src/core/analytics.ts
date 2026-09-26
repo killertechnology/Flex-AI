@@ -10,7 +10,8 @@ type EventName =
   | 'begin_checkout'
   | 'contact_form_submit'
   | 'favorite_team_select'
-  | 'favorite_team_reset';
+  | 'favorite_team_reset'
+  | 'sport_focus_select';
 
 export const analytics = {
   track(event: EventName, payload: Record<string, unknown> = {}) {
