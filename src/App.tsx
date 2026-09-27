@@ -75,6 +75,15 @@ const hiddenSpecificationKeys = new Set([
   'image source url',
   'import note'
 ]);
+const storeHours = [
+  ['Monday', '11:30 AM - 07:30 PM'],
+  ['Tuesday', '11:30 AM - 07:30 PM'],
+  ['Wednesday', '11:30 AM - 07:30 PM'],
+  ['Thursday', '11:30 AM - 07:30 PM'],
+  ['Friday', '11:30 AM - 07:30 PM'],
+  ['Saturday', '09:00 AM - 05:00 PM'],
+  ['Sunday', '09:00 AM - 05:00 PM']
+];
 
 function normalizeOptionHelpKey(name: string) {
   return name.toLowerCase().replace(/\s*-\s*/g, '-').trim();
@@ -1007,10 +1016,29 @@ function ZeroState({ title = 'No products found' }: { title?: string }) {
 }
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer>
-      <div><strong>Penguin Skate & Sports Supply</strong><p>Storefront planning concept with MSRP/reference pricing, service details, and in-store pickup guidance.</p></div>
-      <nav>{(theme.id === 'penguin-classic' ? [...classicNavItems, ...navItems.slice(5, 9)] : navItems).map((item) => <Link key={`${item.label}-${item.href}`} to={item.href}>{item.label}</Link>)}</nav>
+      <div className="footer-brand">
+        <strong>Penguin Skate & Sports Supply</strong>
+        <a href="https://www.google.com/maps/search/?api=1&query=25379%20Rye%20Canyon%20Rd%2C%20Santa%20Clarita%2C%20CA%2091355" target="_blank" rel="noreferrer">25379 Rye Canyon Rd, Santa Clarita, CA 91355</a>
+        <a href="tel:16616252697">661-625-2697</a>
+        <a href="mailto:info@penguinskateandsportssupply.com">info@penguinskateandsportssupply.com</a>
+        <p className="copyright">&copy; {currentYear} Penguin Skate and Sports Supply.</p>
+      </div>
+      <div className="footer-hours">
+        <strong>Store Hours</strong>
+        <dl>
+          {storeHours.map(([day, hours]) => (
+            <div key={day}>
+              <dt>{day}</dt>
+              <dd>{hours}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <nav aria-label="Footer navigation">{(theme.id === 'penguin-classic' ? [...classicNavItems, ...navItems.slice(5, 9)] : navItems).map((item) => <Link key={`${item.label}-${item.href}`} to={item.href}>{item.label}</Link>)}</nav>
       <p className="nhl-disclaimer">NHL team names and abbreviations are used only for visitor personalization. Penguinscape is not affiliated with, sponsored by, or endorsed by the NHL or any NHL member club. No NHL logos or official team artwork are used.</p>
     </footer>
   );
