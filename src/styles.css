@@ -663,10 +663,49 @@ select, .quantity input, .cart-line input { min-height: 42px; border: 1px solid 
 .stock { color: var(--accent); font-weight: 900; }
 .variant-stack { display: grid; gap: 18px; margin: 24px 0; }
 fieldset { border: 0; padding: 0; margin: 0; }
-legend { margin-bottom: 8px; color: var(--muted); font-weight: 900; }
+legend { position: relative; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--muted); font-weight: 900; }
 fieldset div { display: flex; flex-wrap: wrap; gap: 8px; }
 fieldset button { min-height: 40px; padding: 0 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); cursor: pointer; }
 fieldset button.selected { background: var(--accent); color: var(--button-text); border-color: var(--accent); }
+.option-help { position: relative; display: inline-flex; align-items: center; color: var(--text); }
+.option-help-trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  box-shadow: none;
+}
+.option-help-trigger:hover,
+.option-help-trigger[aria-expanded="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.option-help-box {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 8px);
+  z-index: 30;
+  display: grid;
+  gap: 5px;
+  width: min(310px, calc(100vw - 36px));
+  padding: 12px;
+  transform: translateX(-50%);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  line-height: 1.35;
+  text-transform: none;
+}
+.option-help-box strong { font-size: 13px; color: var(--text); }
+.option-help-box span { font-size: 13px; color: var(--muted); font-weight: 750; }
 .quantity { display: grid; gap: 8px; width: 150px; font-weight: 900; color: var(--muted); }
 .message-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 24px 0; }
 .message-grid span, .prototype-state { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; color: var(--muted); }
@@ -965,6 +1004,15 @@ footer nav { display: flex; gap: 14px; flex-wrap: wrap; justify-content: end; fo
 }
 
 @media (max-width: 599px) {
+  .option-help-box {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    top: auto;
+    bottom: 86px;
+    transform: none;
+    width: auto;
+  }
   .pdp {
     padding: 18px 14px 36px;
     gap: 18px;

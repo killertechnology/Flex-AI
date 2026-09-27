@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Link, NavLink, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { ChevronDown, Menu, Search, ShoppingBag, UserRound, X } from 'lucide-react';
+import { ChevronDown, HelpCircle, Menu, Search, ShoppingBag, UserRound, X } from 'lucide-react';
 import { analytics } from './core/analytics';
 import { assetUrl } from './core/assets';
 import { formatMoney, titleFromHandle } from './core/format';
@@ -41,6 +41,48 @@ const sportHeroCopy: Record<SportFocus, { kicker: string; title: string; tagline
     body: 'Find figure skating boots, blades, guards, and essentials with a polished shopping flow for edge control, comfort, support, and performance.'
   }
 };
+
+const stickOptionHelp: Record<string, { title: string; body: string }> = {
+  'blade pattern': {
+    title: 'Blade pattern',
+    body: 'The blade pattern controls the curve, face angle, and shooting surface of the stick. It affects puck lift, passing control, toe drags, and how quickly shots release.'
+  },
+  'hand-flex': {
+    title: 'Hand and flex',
+    body: 'The letter shows stick hand: R means right shot, L means left shot. The number is flex, which is how many pounds of force it takes to bend the shaft one inch.'
+  },
+  hand: {
+    title: 'Hand',
+    body: 'Hand means which side you shoot from. Right shot players hold the stick with the right hand lower on the shaft; left shot players hold the left hand lower.'
+  },
+  flex: {
+    title: 'Flex',
+    body: 'Flex is the stiffness rating of the shaft. Lower flex bends more easily for quicker loading; higher flex feels stiffer and suits stronger players or harder shots.'
+  },
+  length: {
+    title: 'Length',
+    body: 'Length is the stick height before or after trimming. A shorter stick can improve puck control, while a longer stick can add reach and leverage.'
+  },
+  size: {
+    title: 'Size',
+    body: 'Stick size usually maps to player age, height, and strength, such as youth, junior, intermediate, or senior. It often changes shaft dimensions, flex range, and length.'
+  }
+};
+const hiddenSpecificationKeys = new Set([
+  'price source',
+  'price source url',
+  'image source',
+  'image source url',
+  'import note'
+]);
+
+function normalizeOptionHelpKey(name: string) {
+  return name.toLowerCase().replace(/\s*-\s*/g, '-').trim();
+}
+
+function visibleSpecifications(product: Product) {
+  return Object.entries(product.specifications).filter(([key]) => !hiddenSpecificationKeys.has(key.toLowerCase()));
+}
 
 const navItems: NavEntry[] = [
   { label: 'HOCKEY', href: '/collections/hockey', children: [
@@ -347,7 +389,7 @@ function HomePage({ selectedTeamId }: { selectedTeamId?: string }) {
         data-sport-focus={sportFocus}
         data-team-id={selectedTeamId ?? 'default'}
         key={`${selectedTeamId ?? 'default'}-${sportFocus}`}
-        style={{ backgroundImage: `linear-gradient(90deg, var(--hero-scrim), transparent), linear-gradient(0deg, var(--hero-diffusion), var(--hero-diffusion)), url(${heroImage})` }}
+        style={{ backgroundImage: `linear-gradient(90deg, var(--hero-scrim), transparent), linear-gradient(0deg, var(--hero-diffusion), var(--hero-diffusion)), url("${heroImage}")` }}
       >
         <div className="hero-copy">
           <p>{heroCopy.kicker}</p>
@@ -386,12 +428,12 @@ function getSportHeroCopy(selectedTeamId: string | undefined, sportFocus: SportF
 }
 
 function getSportHeroImage(selectedTeamId: string | undefined, sportFocus: SportFocus) {
-  if (sportFocus === 'hockey') {
-    return assetUrl(selectedTeamId ? `/images/team-heroes/${selectedTeamId}.webp` : theme.heroImage);
-  }
-
   if (selectedTeamId && generatedCategoryTeamIds.has(selectedTeamId)) {
     return assetUrl(`/images/team-categories/${selectedTeamId}/${sportFocus}.webp`);
+  }
+
+  if (sportFocus === 'hockey') {
+    return assetUrl(theme.heroImage);
   }
 
   return assetUrl(sportFocus === 'goalie' ? '/images/categories/goalie.webp' : '/images/categories/figure-skating.webp');
@@ -622,6 +664,32 @@ function sortProducts(products: Product[], sort: string) {
   });
 }
 
+function StickOptionHelp({ name }: { name: string }) {
+  const [open, setOpen] = useState(false);
+  const help = stickOptionHelp[normalizeOptionHelpKey(name)];
+  if (!help) return null;
+
+  return (
+    <span className="option-help">
+      <button
+        type="button"
+        className="option-help-trigger"
+        aria-label={`What does ${name} mean?`}
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
+        <HelpCircle size={14} aria-hidden="true" />
+      </button>
+      {open && (
+        <span className="option-help-box" role="status">
+          <strong>{help.title}</strong>
+          <span>{help.body}</span>
+        </span>
+      )}
+    </span>
+  );
+}
+
 function ProductPage() {
   const { slug = '' } = useParams();
   const product = productRepository.getProductBySlug(slug);
@@ -657,6 +725,7 @@ function ProductPage() {
   const nextStick = isStick ? related.find((candidate) => candidate.category === 'Sticks' || candidate.subcategory === 'Composite Sticks') : undefined;
   const recentIds = JSON.parse(localStorage.getItem('penguin-recently-viewed') ?? '[]') as string[];
   const recent = recentIds.map((id) => productRepository.getProductById(id)).filter((candidate): candidate is Product => Boolean(candidate && candidate.id !== currentProduct.id));
+  const specifications = visibleSpecifications(currentProduct);
 
   function addToCart(buyNow = false) {
     addItem(currentProduct.id, selectedVariant.id, quantity);
@@ -677,7 +746,7 @@ function ProductPage() {
         <p className="stock">{isService ? `${product.inventoryStatus} · timing confirmed at drop-off` : `${product.inventoryStatus} · availability shown for store planning`}</p>
         <div className="variant-stack">
           {optionNames.map((name) => (
-            <fieldset key={name}><legend>{name}</legend>
+            <fieldset key={name}><legend><span>{name}</span>{isStick && <StickOptionHelp name={name} />}</legend>
               <div>{Array.from(new Set(product.variants.map((variant) => variant.options[name]).filter(Boolean))).map((value) => (
                 <button className={selected[name] === value ? 'selected' : ''} key={value} onClick={() => setSelected({ ...selected, [name]: value })}>{value}</button>
               ))}</div>
@@ -695,7 +764,7 @@ function ProductPage() {
         )}
         <div className="message-grid">{isService ? <><span>Bring both skates so the bench can check balance, steel, and hardware together.</span><span>Pickup timing is confirmed by Penguin staff when the service is accepted.</span></> : <><span>Ship-to-home and pickup messaging can be connected during Shopify setup.</span><span>Confirm fit and availability with the shop before final purchase.</span></>}</div>
         <details open><summary>Description</summary><p>{product.description}</p></details>
-        <details open><summary>Specifications</summary><dl>{Object.entries(product.specifications).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl></details>
+        {specifications.length > 0 && <details open><summary>Specifications</summary><dl>{specifications.map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl></details>}
         <details><summary>Fit and size guidance</summary><p>Bring skates to the shop for fit confirmation, heat molding, sharpening, and service recommendations before final purchase.</p></details>
       </div>
       <div className="pdp-rails"><ProductRail title="Related Products" products={related} />{recent.length > 0 && <ProductRail title="Recently Viewed" products={recent} />}</div>

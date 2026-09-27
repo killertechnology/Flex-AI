@@ -79,10 +79,19 @@ function isInUniformZone(x, y) {
   return torso || leadArm || backArm || leftLeg || rightLeg || helmet || glove;
 }
 
+function isInPlayerArea(x, y) {
+  return x > 940 && y < 760;
+}
+
 function isOriginalGold(r, g, b) {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   return r > 118 && g > 78 && b < 96 && max - min > 38 && r >= g * 0.82;
+}
+
+function isWarmUniformHighlight(r, g, b) {
+  const luma = r * 0.2126 + g * 0.7152 + b * 0.0722;
+  return r > 94 && g > 72 && b < 112 && r >= b * 1.12 && g >= b * 1.05 && luma > 72;
 }
 
 function isOriginalDarkUniform(r, g, b) {
@@ -104,13 +113,17 @@ async function createUniformVariant(team, baseBuffer) {
 
   for (let y = 0; y < HEIGHT; y += 1) {
     for (let x = 0; x < WIDTH; x += 1) {
-      if (!isInUniformZone(x, y)) continue;
       const offset = (y * WIDTH + x) * 4;
       const r = image[offset];
       const g = image[offset + 1];
       const b = image[offset + 2];
+      const inUniformZone = isInUniformZone(x, y);
 
-      if (isOriginalGold(r, g, b)) {
+      if (!inUniformZone && !(team.id === 'lak' && isInPlayerArea(x, y) && isWarmUniformHighlight(r, g, b))) continue;
+
+      if (team.id === 'lak' && isWarmUniformHighlight(r, g, b)) {
+        tintPixel(image, offset, secondary, 0.98, 0.18);
+      } else if (isOriginalGold(r, g, b)) {
         tintPixel(image, offset, secondary, 0.94, 0.14);
       } else if (isOriginalDarkUniform(r, g, b)) {
         tintPixel(image, offset, primary, 0.84, 0.05);
