@@ -16,6 +16,7 @@
     "verify": "node scripts/verify.mjs",
     "build": "tsc -b && vite build",
     "build:all": "npm run verify && npm run build",
+    "build:concepts": "node scripts/build-static-concepts.mjs",
     "screenshots": "node scripts/capture-screenshots.mjs"
   },
   "dependencies": {

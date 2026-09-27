@@ -15,3 +15,7 @@ test-results/
 
 # Local deployment scratch
 .aws-sam/
+
+# Generated shared static assets; source lives under public/images/team-categories.
+static-site/images/team-categories/
+static-site/concept-*/images/team-categories/

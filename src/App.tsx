@@ -84,6 +84,10 @@ function visibleSpecifications(product: Product) {
   return Object.entries(product.specifications).filter(([key]) => !hiddenSpecificationKeys.has(key.toLowerCase()));
 }
 
+function teamCategoryImageUrl(teamId: string, slug: string) {
+  return `/images/team-categories/${teamId}/${slug}.webp`;
+}
+
 const navItems: NavEntry[] = [
   { label: 'HOCKEY', href: '/collections/hockey', children: [
     { label: 'Hockey Skates', href: '/collections/hockey-skates' },
@@ -429,7 +433,7 @@ function getSportHeroCopy(selectedTeamId: string | undefined, sportFocus: SportF
 
 function getSportHeroImage(selectedTeamId: string | undefined, sportFocus: SportFocus) {
   if (selectedTeamId && generatedCategoryTeamIds.has(selectedTeamId)) {
-    return assetUrl(`/images/team-categories/${selectedTeamId}/${sportFocus}.webp`);
+    return teamCategoryImageUrl(selectedTeamId, sportFocus);
   }
 
   if (sportFocus === 'hockey') {
@@ -500,7 +504,7 @@ function ScrollStory() {
 
 function getCategoryImage(selectedTeamId: string | undefined, slug: string, fallbackPath: string) {
   if (selectedTeamId && generatedCategoryTeamIds.has(selectedTeamId)) {
-    return assetUrl(`/images/team-categories/${selectedTeamId}/${slug}.webp`);
+    return teamCategoryImageUrl(selectedTeamId, slug);
   }
   return assetUrl(fallbackPath);
 }
