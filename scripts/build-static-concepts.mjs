@@ -24,8 +24,10 @@ run('npx', ['tsc', '-b']);
 
 rmSync('/tmp/flex-build', { recursive: true, force: true });
 rmSync('static-site/images/team-categories', { recursive: true, force: true });
+rmSync('static-site/images/store', { recursive: true, force: true });
 await mkdir('static-site/images', { recursive: true });
 cpSync('public/images/team-categories', 'static-site/images/team-categories', { recursive: true });
+cpSync('public/images/store', 'static-site/images/store', { recursive: true });
 
 for (const [concept, theme] of concepts) {
   run('npx', ['vite', 'build', '--base', `/${concept}/`, '--outDir', `/tmp/flex-build/${concept}`, '--emptyOutDir'], {
@@ -37,4 +39,5 @@ for (const [concept, theme] of concepts) {
   cpSync(`/tmp/flex-build/${concept}`, `static-site/${concept}`, { recursive: true });
 
   rmSync(`static-site/${concept}/images/team-categories`, { recursive: true, force: true });
+  rmSync(`static-site/${concept}/images/store`, { recursive: true, force: true });
 }

@@ -416,6 +416,7 @@ function HomePage({ selectedTeamId }: { selectedTeamId?: string }) {
         )}
       </section>
       <ScrollStory />
+      <ChampionBand />
       <CategoryNavigation selectedTeamId={selectedTeamId} />
       <ProductRail title="Featured Products" products={featured} />
       <ProductRail title="Under $75 Picks" products={under75} href="/collections/under-75?sort=price-asc" />
@@ -505,6 +506,38 @@ function ScrollStory() {
             <p>{panel.body}</p>
             <Link className={index === 1 ? 'button secondary' : 'button primary'} to={panel.href}>{panel.cta}</Link>
           </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ChampionBand() {
+  const storeImages = [
+    {
+      src: '/images/store/penguin-store-aisle-gear.jpg',
+      alt: 'Penguin Skate store aisle with hockey gear and skate equipment'
+    },
+    {
+      src: '/images/store/penguin-store-stick-wall.jpg',
+      alt: 'Penguin Skate store wall with hockey sticks, helmets, and gear'
+    }
+  ];
+
+  return (
+    <section className="champion-band" aria-label="Champion shopping callout">
+      <div className="champion-copy" data-reveal>
+        <p className="eyebrow">Ready for the next shift?</p>
+        <h2>Are you ready to become a champion?</h2>
+        <p>
+          Sail the ice with trusted hockey, figure skating, goalie, and service support from a specialty shop built
+          for skaters who care about fit, feel, and performance.
+        </p>
+        <Link className="button primary" to="/collections/hockey">Shop Now</Link>
+      </div>
+      <div className="champion-gallery" data-reveal style={{ transitionDelay: '120ms' }}>
+        {storeImages.map((image) => (
+          <img src={image.src} alt={image.alt} loading="lazy" width="768" height="1024" key={image.src} />
         ))}
       </div>
     </section>
