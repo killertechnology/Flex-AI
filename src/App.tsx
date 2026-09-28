@@ -15,6 +15,7 @@ const theme = getActiveTheme();
 type NavEntry = { label: string; href: string; children?: { label: string; href: string; description?: string }[] };
 type SportFocus = 'hockey' | 'goalie' | 'figure-skating';
 const generatedCategoryTeamIds = new Set(nhlTeams.map((team) => team.id));
+const teamCategoryAssetVersion = '20260927-goalie-full-1';
 const sportFocusCookieName = 'penguinSportFocus';
 const sportFocusOptions: { id: SportFocus; label: string; href: string }[] = [
   { id: 'hockey', label: 'Hockey', href: '/collections/hockey' },
@@ -94,7 +95,7 @@ function visibleSpecifications(product: Product) {
 }
 
 function teamCategoryImageUrl(teamId: string, slug: string) {
-  return `/images/team-categories/${teamId}/${slug}.webp`;
+  return `/images/team-categories/${teamId}/${slug}.webp?v=${teamCategoryAssetVersion}`;
 }
 
 const navItems: NavEntry[] = [
